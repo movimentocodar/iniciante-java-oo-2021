@@ -1,7 +1,10 @@
-public class Main extends SistemaInterno {
-		
+package classes;
+import abstracts.SistemaInterno;
+
+public class EscolhaPedido extends SistemaInterno {
+	private int escolhaBebida;
 	
-	public static void escolhaSabor() {
+	public void escolha() {
 		
 		System.out.println("\n  --------- Selecione uma Opção --------- \n");
 		System.out.println("| --> 1. Café .................... R$0.50  |");
@@ -12,11 +15,10 @@ public class Main extends SistemaInterno {
 		System.out.println("\n ------------- 0. Desliga -------------");
 		
 		System.out.println("\n -----> Número do Pedido: ");		
+		escolhaBebida = super.tryEscolha(5);
+		super.pausa(500);
+		
+		Preparo bebida = new Preparo(escolhaBebida);
 		
 	}
-	
-	public static void main(String[] args) {				
-		
-	}
-
 }
