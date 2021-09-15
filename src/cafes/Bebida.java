@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Bebida {
     private int id;
     private String nome;
-    Receitas receita;
+    Receita receita;
     private double preco;
     private static ArrayList<Bebida> menu = new ArrayList<Bebida>();
 
@@ -12,7 +12,7 @@ public class Bebida {
 
     }
 
-    public Bebida(int id, String nome, Receitas receita, double preco) {
+    public Bebida(int id, String nome, Receita receita, double preco) {
         this.id = id;
         this.nome = nome;
         this.receita = receita;
