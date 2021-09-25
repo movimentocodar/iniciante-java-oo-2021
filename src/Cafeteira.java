@@ -1,10 +1,13 @@
 import java.util.Scanner;
+import br.com.movimento.cafeteira.bebidas.Bebida;
 
 public class Cafeteira {
 
 	public static void main(String[] args) {
+		
+		Imprime imprimir = new Imprime();
 	    
-		System.out.println("Bem-vindo a Cafeteria!!\n");
+		imprimir.imprime("Bem-vindo a Cafeteria!!\n");
 		int inicio;
 		
 		Pedido pedido = new Pedido();
@@ -12,13 +15,13 @@ public class Cafeteira {
 		
 		do {
 			Scanner opcaoInicial = new Scanner(System.in);
-		    System.out.println("\nEscolha a opção desejada:\n"
+			imprimir.imprime("\nEscolha a opção desejada:\n"
 		    		+ "1 - Adicionar Crédito\n"
 		    		+ "2 - Realizar Pedido\n"
 		    		+ "0 - Finalizar");
 	
 		    inicio = opcaoInicial.nextInt();
-		    System.out.println("Você escolheu: " + inicio);
+		    imprimir.imprime("Você escolheu: " + inicio);
 		    
 		    switch(inicio) {
 		    case 1:
@@ -29,6 +32,6 @@ public class Cafeteira {
 		    	break;
 		    }
 		}while(inicio == 1 || inicio == 2);
-		System.out.println("Máquina finalizada");
+		imprimir.imprime("Máquina finalizada");
 	}
 }
