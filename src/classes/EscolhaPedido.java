@@ -1,5 +1,5 @@
 package classes;
-import abstracts.SistemaInterno;
+import classes.abstracts.SistemaInterno;
 
 public class EscolhaPedido extends SistemaInterno {
 	private int escolhaBebida;

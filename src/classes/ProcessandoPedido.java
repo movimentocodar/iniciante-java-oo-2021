@@ -2,8 +2,8 @@ package classes;
 
 import java.util.InputMismatchException;
 
-import abstracts.SistemaInterno;
-import abstracts.SistemaPagamento;
+import classes.abstracts.SistemaInterno;
+import classes.abstracts.SistemaPagamento;
 
 public class ProcessandoPedido extends SistemaPagamento {
 
@@ -37,6 +37,7 @@ public class ProcessandoPedido extends SistemaPagamento {
 			}
 		} catch (InputMismatchException ex) {
 				SistemaInterno.pausa(500);
+				SistemaInterno.repetir();
 			}
 		
 		return escolhaNivel;

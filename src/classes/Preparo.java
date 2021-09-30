@@ -2,8 +2,8 @@ package classes;
 
 import java.util.InputMismatchException;
 
-import abstracts.SistemaInterno;
-import abstracts.SistemaPagamento;
+import classes.abstracts.SistemaInterno;
+import classes.abstracts.SistemaPagamento;
 import classes.bebidas.AguaQuente;
 import classes.bebidas.Cafe;
 import classes.bebidas.CafeLeite;
@@ -27,6 +27,7 @@ public class Preparo extends SistemaInterno {
 			} catch (DinheiroInsuficienteException ex) {
 				System.out.println(ex);
 				SistemaInterno.pausa(500);
+				SistemaInterno.repetir();
 			}
 		} else { 
 			this.preparo();

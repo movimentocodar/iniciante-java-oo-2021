@@ -1,6 +1,6 @@
 package exceptions;
 
-import abstracts.SistemaPagamento;
+import classes.abstracts.SistemaPagamento;
 
 public class DinheiroInsuficienteException extends RuntimeException {
 

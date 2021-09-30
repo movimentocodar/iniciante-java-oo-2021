@@ -1,6 +1,6 @@
 package classes.bebidas;
 
-import abstracts.Bebida;
+import classes.abstracts.Bebida;
 
 public class CafeLeite extends Bebida {
 	private String nome = "Café com leite";	

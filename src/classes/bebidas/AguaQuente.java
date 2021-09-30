@@ -1,7 +1,7 @@
 package classes.bebidas;
 
-import abstracts.Bebida;
-import abstracts.SistemaInterno;
+import classes.abstracts.Bebida;
+import classes.abstracts.SistemaInterno;
 
 public class AguaQuente extends Bebida {
 
