@@ -29,7 +29,7 @@ public class ProcessandoPedido extends SistemaPagamento {
 			}
 			case "S", "s": {
 				System.out.println("Colheres de açúcar: 0-5. Escolha:");
-				escolhaNivel = super.tryEscolha(0, 5);
+				return escolhaNivel = super.tryEscolha(0, 5);
 			}
 			default:
 				throw new InputMismatchException("Caractere inválido: " 
