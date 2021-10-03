@@ -12,10 +12,10 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 
         try {
-            Parent root = FXMLLoader.load(Main.class.getResource("pages/main.fxml"));
+            Parent root = FXMLLoader.load(Main.class.getResource("view/pages/main.fxml"));
             Scene scene = new Scene(root, 302, 500);
 
-            scene.getStylesheets().add(Main.class.getResource("css/main.css").toExternalForm());
+            scene.getStylesheets().add(Main.class.getResource("view/css/main.css").toExternalForm());
             stage.setTitle("Máquina de Café");
             stage.setScene(scene);
 
