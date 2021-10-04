@@ -14,7 +14,7 @@ public class Cedulas implements ICreditavel {
     @Override
     public boolean isValid(double valor) {
         if (!celulas.contains(valor) | valor < 0) {
-            throw new CreditoInvalidoException("Valor não é Valido");
+            throw new CreditoInvalidoException("Valor não é valido");
         }
         return true;
     }

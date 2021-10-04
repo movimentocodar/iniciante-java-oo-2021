@@ -4,9 +4,10 @@ import com.jands.cafefx.maquinadecafe.model.credito.creditavel.ICreditavel;
 
 public class AdicionarCreditoNaMaquina {
 
-    public static boolean adicionar(ICreditavel formaDePagamento, double valor, double creditoAtualDaMaquina) {
-        if (formaDePagamento.isValid(valor)){
-            return formaDePagamento.adicionarCredito(valor);
+    public static double adicionar(ICreditavel formaDePagamento, double valor) {
+        if (!formaDePagamento.isValid(valor)){
+            throw new CreditoInvalidoException("Forma de pagamento não é valida");
         }
+        return valor;
     }
 }
