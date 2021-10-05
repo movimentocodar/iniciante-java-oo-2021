@@ -19,4 +19,8 @@ public class Cedulas implements ICreditavel {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Cedula";
+    }
 }

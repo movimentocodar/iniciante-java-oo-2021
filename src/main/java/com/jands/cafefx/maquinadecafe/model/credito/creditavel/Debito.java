@@ -2,7 +2,7 @@ package com.jands.cafefx.maquinadecafe.model.credito.creditavel;
 
 import com.jands.cafefx.maquinadecafe.model.credito.modelocredito.CreditoInvalidoException;
 
-public class Debito extends FormaDeCredito {
+public class Debito implements ICreditavel {
 
     @Override
     public boolean isValid(double valor) {
@@ -12,4 +12,8 @@ public class Debito extends FormaDeCredito {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Debito";
+    }
 }
