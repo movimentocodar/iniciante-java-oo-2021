@@ -1,57 +1,37 @@
 package classes;
-import java.math.BigDecimal;
-import java.util.List;
-
-import classes.abstracts.Bebida;
 import classes.abstracts.SistemaInterno;
-import classes.abstracts.SistemaPagamento;
 
 public class EscolhaPedido extends SistemaInterno {
 	private int escolhaBebida;
 	
+	public EscolhaPedido() {
+		this.escolha();
+	}
+	
 	public void escolha() {
 		
-		ListaBebidas lista = new ListaBebidas();
-		lista.adicionaItens();
-		List<Bebida> bebidas = super.getBebidas();
-
-		super.println("\n  --------- Selecione uma Opção --------- \n");
-
-		bebidas.forEach(bebida -> {
-			super.println("| --> " + (bebidas.indexOf(bebida) + 1) 
-					+ ". " + bebida.toString() + " |");
-		});
+		System.out.println("\n  --------- Selecione uma Opção --------- \n");
+		System.out.println("| --> 1. Café .................... R$0.50  |");
+		System.out.println("| --> 2. Café com Leite .......... R$1.00  |");
+		System.out.println("| --> 3. Capuccino ............... R$1.50  |");
+		System.out.println("| --> 4. Chá de Limão ............ R$1.00  |");
+		System.out.println("| --> 5. Água Quente ............. Grátis  |");		
+		System.out.println("\n ------------- 0. Desliga -------------");
 		
-		super.println("\n ------------- 0. Desliga -------------");
-	
-		super.print("\n ----> Água disponível: " + super.getReservaAgua() + "ml");
-		super.println("\n ----> Crédito: R$ " + SistemaPagamento.getCredito());
+		System.out.println("\n ----> Água disponível: " + getReservaAgua() + "ml");
 		
-		super.println("\n -----> Número do Pedido: ");		
-		escolhaBebida = super.tryEscolha(0, super.getBebidas().size());
-		super.println("");
-		super.pausa(500);
+		System.out.println("\n -----> Número do Pedido: ");		
+		escolhaBebida = super.tryEscolha(0, 5);
+		SistemaInterno.pausa(500);
 		
-		// Captura posição da água com base no preço gratuito para usar na condicional seguinte
-		int precoBebida = 
-				super.getBebidas().get(escolhaBebida - 1).getPreco().compareTo(new BigDecimal("0.00"));
-		
-		if(escolhaBebida != 0 && precoBebida != 0) {
-			if(super.verificaAgua()) {
-				new ProcessandoPedido(escolhaBebida);
-			}
-		} else if(precoBebida == 0) {
-			if(super.verificaAgua()) {
-				new Preparo(5);
-			}
-		} else {
+		if(escolhaBebida != 0 && escolhaBebida != 5) {
+			ProcessandoPedido bebida = new ProcessandoPedido(escolhaBebida);
+		} if(escolhaBebida == 5) {
+			Preparo bebida = new Preparo(5, 0);
+		} if(escolhaBebida == 0) {
 			super.carregando("Desligando");
-			super.println("_____________________________________");
+			System.out.println("_____________________________________");
 			System.exit(0);
 		}
-		
-		lista.removeItens();
-		super.println("\n \n \n \n \n \n \n \n \n");
-		
 	}
 }

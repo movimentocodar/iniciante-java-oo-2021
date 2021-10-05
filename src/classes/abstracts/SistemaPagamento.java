@@ -1,102 +1,110 @@
 package classes.abstracts;
 
-import java.math.BigDecimal;
-
 import exceptions.DinheiroInsuficienteException;
 
 public abstract class SistemaPagamento extends SistemaInterno {
-	private static BigDecimal credito = new BigDecimal("0.00");
+	private static double credito;
 	private static boolean saldoNegado = false;
+	
 
 	public static boolean getSaldoNegado() {
 		return SistemaPagamento.saldoNegado;
 	}
+	
+	private double determinaPreco(int numero) {
+		double preco;
 
-	public static void resetVerificacaoSaldo() {
-		SistemaPagamento.saldoNegado = false;
-	}
+		switch (numero) {
+		case 2, 4: {
+			preco = 1.00;
+			break;
+		}
+		case 3: {
+			preco = 1.50;
+			break;
+		}
+		default: {
+			preco = 0.50;
+		}
+		}
 
-	public static BigDecimal getCredito() {
-		return credito;
-	}
-
-	private BigDecimal determinaPreco(int numero) {
-		BigDecimal preco = super.getBebidas().get(numero - 1).getPreco();
 		return preco;
 	}
 
-	private void atualizaCredito(int dinheiro, BigDecimal preco) {
-		BigDecimal dinheiroDecimal = new BigDecimal(dinheiro);
-		super.println(dinheiroDecimal);
-		SistemaPagamento.credito = SistemaPagamento.credito.add(dinheiroDecimal).subtract(preco);
+	private void atualizaCredito(int dinheiro, double preco) {
+		SistemaPagamento.credito = 
+				(dinheiro + SistemaPagamento.credito) - preco;
+	}
+	
+	private void atualizaCredito(double dinheiro, double preco) {
+		SistemaPagamento.credito = 
+			(dinheiro + SistemaPagamento.credito) - preco;
 	}
 
-	private void atualizaCredito(BigDecimal dinheiro, BigDecimal preco) {
-		SistemaPagamento.credito = SistemaPagamento.credito.add(dinheiro).subtract(preco);
-	}
-
-	private boolean checaCredito(BigDecimal preco) {
-		if (SistemaPagamento.credito.compareTo(preco) == 1) {
+	private boolean checaCredito(double preco) {
+		if (preco <= SistemaPagamento.credito) {
 			return true;
 		} else
 			return false;
 	}
 
 	public void insereDinheiro(int numeroPedido) {
-
-		BigDecimal preco = determinaPreco(numeroPedido);
+		
+		double preco = determinaPreco(numeroPedido);
 		int dinheiro;
-
-		if (!this.checaCredito(preco)) {
+		
+		if(!this.checaCredito(preco)) {
 			try {
 				dinheiro = super.input.nextInt();
-
+			
 				switch (dinheiro) {
 				case 2, 5, 10, 20, 50, 100: {
 					this.atualizaCredito(dinheiro, preco);
 					break;
 				}
 				default:
-					throw new IllegalArgumentException(
-							"Valor inesperado: nota inválida. \n " + "Insira uma nota existente.");
+					throw new IllegalArgumentException();
 				}
-			} catch (IllegalArgumentException ex) {
-				super.println(ex);
+			} catch(IllegalArgumentException ex) {
+				System.out.println(ex + "Valor inesperado: "
+						+ "nota inválida. \n "
+						+ "Insira uma nota existente.");
 				insereDinheiro(numeroPedido);
 			}
-
-			super.println("\n Pagamento efetuado com sucesso! " + "Você tem agora R$ " + SistemaPagamento.credito
-					+ " de crédito em descontos!");
-			super.pausa(500);
-
+			
+			System.out.println("Pagamento efetuado com sucesso! "
+					+ "Você tem agora R$ " + SistemaPagamento.credito +
+					" de crédito em descontos! \n");
 		} else {
-			super.println("\n Pagamento efetuado com créditos! " + "Você tem agora R$ " + SistemaPagamento.credito
-					+ " de crédito em descontos!");
-			super.pausa(500);
+			System.out.println("Pagamento efetuado com créditos! "
+					+ "Você tem agora R$ " + SistemaPagamento.credito +
+					" de crédito em descontos! \n");
+			SistemaInterno.pausa(500);
 		}
 	}
 
 	public void usaDebito(int numeroPedido) {
-		BigDecimal preco = determinaPreco(numeroPedido);
-
-		if (!this.checaCredito(preco)) {
+		double preco = determinaPreco(numeroPedido);
+		
+		if(!this.checaCredito(preco)) {
 			try {
-				BigDecimal dinheiro = super.input.nextBigDecimal();
-
-				if (dinheiro.add(SistemaPagamento.credito).compareTo(preco) == -1) {
-					throw new DinheiroInsuficienteException();
-				} else {
+				double dinheiro = super.input.nextDouble();
+				
+				if (dinheiro + SistemaPagamento.credito >= preco) {
 					this.atualizaCredito(dinheiro, preco);
-					super.println("Pagamento efetuado com sucesso! " + "Você tem agora R$ " + SistemaPagamento.credito
+					System.out.println("Pagamento efetuado com sucesso! "
+							+ "Você tem agora R$ " + SistemaPagamento.credito
 							+ " de crédito em descontos!");
-
+				} else {
+					throw new DinheiroInsuficienteException();
 				}
 			} catch (DinheiroInsuficienteException ex) {
 				SistemaPagamento.saldoNegado = true;
 			}
 		} else {
-			super.println("Pagamento efetuado com créditos! " + "Você tem agora R$ " + SistemaPagamento.credito
-					+ "de crédito em descontos!");
+			System.out.println("Pagamento efetuado com créditos! "
+					+ "Você tem agora R$ " + SistemaPagamento.credito +
+					"de crédito em descontos! \n");
 		}
 	}
 
