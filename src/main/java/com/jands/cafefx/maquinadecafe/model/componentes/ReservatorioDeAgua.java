@@ -3,6 +3,14 @@ package com.jands.cafefx.maquinadecafe.model.componentes;
 public class ReservatorioDeAgua {
     private static double agua = 100;
 
+    ReservatorioDeAgua() {
+
+    }
+
+    ReservatorioDeAgua(double agua) {
+
+    }
+
     public static void usarAgua() {
         if (getAguaReservatorio() < 50) {
             System.out.println("Agua Insuficiente, Por Favor Reabasteça!");

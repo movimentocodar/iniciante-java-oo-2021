@@ -17,8 +17,8 @@ public class MaquinaDeCafe {
         return GerenciadorDeCredito.adicionarCredito(formaDePagamento, valor);
     }
 
-    public boolean sacarCreditoDaMaquina() {
-        return GerenciadorDeCredito.sacarCredito();
+    public boolean sacarCreditoDaMaquina(double valorSacar) {
+        return GerenciadorDeCredito.sacarCredito(GerenciadorDeCredito.getCreditoDaMaquina(),valorSacar);
     }
 
     public boolean reabastecerMaquina() {

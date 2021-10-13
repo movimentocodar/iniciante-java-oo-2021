@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 
 public class ReceberTrocoEvent {
     public static void receber(MaquinaDeCafe maquinaDeCafe, Label labelMyCredits) {
-        maquinaDeCafe.sacarCreditoDaMaquina();
+        maquinaDeCafe.sacarCreditoDaMaquina(10);
         labelMyCredits.setText(Double.toString(GerenciadorDeCredito.getCreditoDaMaquina()));
     }
 }

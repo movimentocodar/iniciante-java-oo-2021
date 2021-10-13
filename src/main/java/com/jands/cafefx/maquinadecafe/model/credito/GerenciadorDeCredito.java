@@ -38,7 +38,7 @@ public class GerenciadorDeCredito {
     }
 
 
-    public static boolean sacarCredito() {
+    public static boolean sacarCredito(double creditoDaMaquinaAtual, double valorSacar) {
         try {
             System.out.println("Sacando " + getCreditoDaMaquina());
             creditoDaMaquina = 0.0;
