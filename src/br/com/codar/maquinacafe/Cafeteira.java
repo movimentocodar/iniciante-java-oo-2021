@@ -1,7 +1,7 @@
 package br.com.codar.maquinacafe;
 import java.util.Scanner;
 
-public class TesteFinal { // Realize o teste do código por aqui, obrigado!
+public class Cafeteira { // Realize o teste do código por aqui, obrigado!
 	
 	public static void main(String[] args) {
 		

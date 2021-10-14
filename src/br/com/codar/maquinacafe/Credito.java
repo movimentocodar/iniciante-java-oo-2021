@@ -1,5 +1,6 @@
 package br.com.codar.maquinacafe;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class Credito {
@@ -15,7 +16,7 @@ public class Credito {
 		this.valorCredito++;
 	}
 	
-	public void adicionaCredito(Credito credito) {
+	public InputStream adicionaCredito(Credito credito) {
 		Scanner opcaoCredito = new Scanner(System.in);
 		System.out.println("Entre com o valor do crédito disponível:\n"
 							+ "5 - 5 créditos\n"
@@ -26,10 +27,13 @@ public class Credito {
 							+ "200 - 200 créditos");
 		
 		int creditoInserido = opcaoCredito.nextInt();
-		
+		if (creditoInserido <= 0) {
+			throw new IllegalArgumentException("Insira um valor valido");
+		}
 		double valorCredito = credito.getValorCredito();
 		valorCredito += creditoInserido;
 		credito.setValorCredito(valorCredito);
+		return null;
 		
 	}
 	

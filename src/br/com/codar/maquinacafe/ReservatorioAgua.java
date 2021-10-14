@@ -1,15 +1,14 @@
 package br.com.codar.maquinacafe;
 
 public class ReservatorioAgua {
-	
+
 	private int nivelAgua;
 	private int reservatorio;
-	
-	
+
 	public int getNivelAgua() {
 		return nivelAgua;
 	}
-	
+
 	public void setNivelAgua(int nivelAgua) {
 		this.nivelAgua = nivelAgua;
 	}
@@ -17,18 +16,26 @@ public class ReservatorioAgua {
 	public int getReservatorio() {
 		return reservatorio;
 	}
-	
+
 	public void conferindoReservatorio() {
 		int reservatorio = getNivelAgua();
-		
-		if(reservatorio == 0) {
+
+		if (reservatorio == 0) {
 			abastecendoReservatorio();
 		}
 	}
-	
+
+	public int utilizandoAgua(int aguaConsumida) {
+		int nivelAgua = getNivelAgua();
+		nivelAgua -= aguaConsumida;
+		setNivelAgua(nivelAgua);
+
+		return nivelAgua;
+	}
+
 	public void abastecendoReservatorio() {
 		setNivelAgua(1000);
 		int reservatorio = getNivelAgua();
 	}
-	
+
 }

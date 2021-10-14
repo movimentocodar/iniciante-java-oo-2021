@@ -17,7 +17,6 @@ public class AguaQuente extends Bebida {
 	public void preparaBebida(Credito credito, ReservatorioAgua reservatorio) {
 		System.out.println("Água Quente é gratuito, obrigado pelo pedido.");
 		}
-		// Pensar em como utilizar o reservatório
 
 	public int solicitaNivelAcucar() {
 		return 0;
