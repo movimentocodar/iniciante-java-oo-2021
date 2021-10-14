@@ -20,10 +20,6 @@ public class ControllerEvents {
         DepositarEvent.depositarEvent(tipoDeposito, maquinaDeCafe, creditValue, debito, labelMyCredits, choiceCedulas);
     }
 
-    public static void ReabastecerEvent() {
-        ReabastecerEvent.reabastecerEvent();
-    }
-
     public static void PrepararBebidaEvent(MaquinaDeCafe maquinaDeCafe, ChoiceBox bebidasPreparaveis, Label labelMyCredits, Slider sliderAcucar, Label labelStatus) {
         PrepararBebidaEvent.prepararBebidaEvent(maquinaDeCafe, bebidasPreparaveis, labelMyCredits, sliderAcucar, labelStatus);
     }

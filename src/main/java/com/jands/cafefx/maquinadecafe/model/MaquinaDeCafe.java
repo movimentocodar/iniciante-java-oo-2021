@@ -8,6 +8,7 @@ import com.jands.cafefx.maquinadecafe.model.credito.creditavel.ICreditavel;
 import javafx.scene.control.Slider;
 
 public class MaquinaDeCafe {
+    ReservatorioDeAgua reservatorioDeAgua = new ReservatorioDeAgua();
 
     public boolean prepararBebida(IBebida bebida, Slider sliderAcucar) {
         return GerenciadorBebidas.prepararBebida(bebida, sliderAcucar);
@@ -22,6 +23,11 @@ public class MaquinaDeCafe {
     }
 
     public boolean reabastecerMaquina() {
-        return ReservatorioDeAgua.abastercerAgua();
+        try {
+            reservatorioDeAgua.abastecerReservatorio(200);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

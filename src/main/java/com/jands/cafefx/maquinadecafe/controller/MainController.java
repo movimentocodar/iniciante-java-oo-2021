@@ -58,7 +58,7 @@ public class MainController implements Initializable {
     }
 
     private void reabastecerAgua(ActionEvent event) {
-        ControllerEvents.ReabastecerEvent();
+        maquinaDeCafe.reabastecerMaquina();
     }
 
     private void depositar(ActionEvent event) {
