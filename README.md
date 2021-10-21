@@ -4,11 +4,20 @@
 
 Plano de estudos com cursos, artigos e vídeos com o conteúdo do módulo "Back-end - Java e Orientação a Objetos Básico"
 
-- [Plano de estudo](https://cursos.alura.com.br/backend-java-vnsueda-1622331668115-p164413)
+- [Plano de estudo - Java e Orientação a Objetos Básico](https://cursos.alura.com.br/backend-java-vnsueda-1622331668115-p164413)
+- [Plano de estudo - Java: bibliotecas e coleções](https://cursos.alura.com.br/back-end-java-bibliotecas-e-colecoes-vnsueda-1622334979283-p164428)
+- [Plano de estudo - Java: testes](https://cursos.alura.com.br/back-end-java-testes-vnsueda-1622337417005-p164444)
+- [Plano de estudo - Java: boas práticas e padrões de projetos](https://cursos.alura.com.br/back-end-java-boas-praticas-vnsueda-1622337399900-p164442)
 
 Conteúdo adicional
 
 - https://www.w3schools.com/java/default.asp
+- [Capturando entrada do usuário com Scanner](https://www.w3schools.com/java/java_user_input.asp)
+- https://exercism.org/tracks/java/exercises
+- https://github.com/matyb/java-koans
+- https://www.caelum.com.br/apostila-java-orientacao-objetos/pacotes-organizando-suas-classes-e-bibliotecas
+- https://medium.com/contexto-delimitado/o-princ%C3%ADpio-da-invers%C3%A3o-de-depend%C3%AAncia-d52987634fa9
+- https://refactoring.guru/pt-br
 
 # Desafio
 
@@ -51,8 +60,9 @@ As seguintes opções devem estar disponíveis para seleção:
     - Cartão de Débito
         - Qualquer valor maior que zero
 
+A máquina deve calcular e devolver o troco quando necessário.
 
-Essa máquina não devolve troco, só recebe créditos e os desconta ao selecionar uma bebida.
+Considere que a máquina tem um reservatório de 1L de água e cada bebida retirada sempre usará 50ml, quando não houver água disponível informe na saída que a máquina precisa ser reabastecida com água.
 
 ### Preparando a bebida
 
@@ -64,15 +74,22 @@ Para simular a preparação da bebida solicitada, você deverá demonstrar toda 
 - Capuccino = Água Quente + Café em pó + Leite em Pó + Chocolate em Pó + Filtro
 - Chá de Limão = Água Quente + Chá em pó + Filtro
 
+
+### (!) Após o módulo de testes (!)
+
+Implemente os testes automatizados com JUnit e Mockito para garantir as regras e funcionamento da máquina de café.
+
+### (!) Após o módulo de boas práticas e padrões de projeto (!)
+
+Revise seu código, refatore e faça melhorias de acordo com os conhecimentos adquiridos.
+
+Tente aplicar ao menos um padrão de projeto. Escolha um que você acredite que faça sentido e ajude a resolver algum problema ou melhorar sua solução.
+
 ### Avisos
 
 - Crie os arquivos e faça a organização do projeto conforme achar necessário.
 - A forma como irá demonstrar as informações e solicitar entrada do usuário poderá ser via console. Fique à vontade para fazer de outra forma se preferir.
 
-## Desafio extra
-
-1. Algumas pessoas ficaram bravas com o lance de não devolver troco... Use a sua criatividade ao criar e implementar uma solução na Máquina de Café para resolver este problema.
-2. Considere que a máquina tem um reservatório de 1L de água e cada bebida retirada sempre usará 50ml, quando não houver água disponível informe na saída que a máquina precisa ser reabastecida com água.
 
 ## Submetendo a solução dos desafios
 
