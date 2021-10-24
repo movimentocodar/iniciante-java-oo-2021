@@ -1,16 +1,18 @@
 package br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_com_usuario;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-
-import br.com.github.zsguil.maquina_cafe.classes.bebidas.Cafe;
 
 class InteracaoComUsuarioEmBebidasTest {
 
 	@Test
 	public void deveRetornarOTamanhoCorretoDoDivisor() {
-		assertEquals(20, InteracaoComUsuarioEmBebidas.divisorNomePreco(4).length());
+		int caracteresDoNome = 4;
+		int tamanhoEsperadoDoDivisor = 24 - caracteresDoNome;
+		
+		assertEquals(tamanhoEsperadoDoDivisor, 
+				InteracaoComUsuarioEmBebidas.gerarDivisorNomePreco(caracteresDoNome).length());
 	}
 
 }

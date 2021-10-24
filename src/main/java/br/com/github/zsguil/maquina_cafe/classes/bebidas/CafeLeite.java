@@ -11,24 +11,24 @@ public class CafeLeite extends Bebida implements IBebidaEspecial {
 	private int nivelAcucar;
 		
 	@Override
-	public void preparo() {
+	public void preparar() {
 		super.novoProcesso().ferverAgua();
-		super.novoProcesso().usandoIngrediente("Adicionando café", "\n Concluído!");
-		super.novoProcesso().usandoIngrediente("Colocando leite", "\n Concluído!");
-		this.usaAcucar();
-		super.novoProcesso().terminoBebida(this.nome);	
+		super.novoProcesso().usarIngrediente("Adicionando café", "\n Concluído!");
+		super.novoProcesso().usarIngrediente("Colocando leite", "\n Concluído!");
+		this.usarAcucar();
+		super.novoProcesso().terminarBebida(this.nome);	
 	}
 	
 	@Override
-	public void separaAcucar(int acucar) {
+	public void separarAcucar(int acucar) {
 		this.nivelAcucar = acucar;
 	}
 
 	@Override
-	public void usaAcucar() {
+	public void usarAcucar() {
 		if(this.nivelAcucar != 0)
 			super.novoProcesso()
-			.usandoIngrediente("Colocando " + this.nivelAcucar + " colheres de açúcar", "Açúcar adicionado");
+			.usarIngrediente("Colocando " + this.nivelAcucar + " colheres de açúcar", "Açúcar adicionado");
 	}
 	
 	
@@ -44,7 +44,7 @@ public class CafeLeite extends Bebida implements IBebidaEspecial {
 	
 	@Override
 	public String toString() {
-		return this.nome + " " + super.divisorNomePreco(this.nome.length()) 
+		return this.nome + " " + super.gerarDivisorNomePreco(this.nome.length()) 
 			+ " R$" + this.preco;
 	}
 	

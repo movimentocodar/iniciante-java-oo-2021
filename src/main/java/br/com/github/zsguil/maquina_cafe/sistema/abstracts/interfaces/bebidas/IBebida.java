@@ -11,6 +11,6 @@ public interface IBebida {
 	@Override
 	public String toString();
 	
-	public void preparo();
+	public void preparar();
 	
 }

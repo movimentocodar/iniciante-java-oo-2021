@@ -11,15 +11,15 @@ public final class EscolhaPedido extends InteracaoComUsuario {
 				
 		super.text().println("\n -----> Faça seu pedido: ");		
 		
-		this.escolhaBebida = super.escolha(0, super.getBebidas().size());
+		this.escolhaBebida = super.escolher(0, super.getBebidas().size());
 		
 		super.text().println("");
-		super.pausa(500);
+		super.pausar(500);
 
 		if(this.escolhaBebida != 0) 
-			new EscolhaRepassada(this.escolhaBebida);
+			new EscolhaRepassada().repassar(this.escolhaBebida);
 		else 
-			new DesligaMaquinaService();
+			new DesligaMaquinaService().desligar();
 		
 	}
 

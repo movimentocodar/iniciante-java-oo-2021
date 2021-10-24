@@ -8,8 +8,8 @@ class VerificaQuantidadeDeAguaServiceTest {
 
 	@Test
 	void deveRetornarFalseSeQuantidadeDeAguaForMenorQue50() {
-		assertFalse(new VerificaQuantidadeDeAguaService().verifica(20));
-		assertTrue(new VerificaQuantidadeDeAguaService().verifica(50));
+		assertFalse(new VerificaQuantidadeDeAguaService().verificar(20));
+		assertTrue(new VerificaQuantidadeDeAguaService().verificar(50));
 	}
 
 }

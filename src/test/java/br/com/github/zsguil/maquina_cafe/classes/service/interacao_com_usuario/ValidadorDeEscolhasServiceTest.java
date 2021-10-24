@@ -10,10 +10,10 @@ class ValidadorDeEscolhasServiceTest {
 	private ValidadorDeEscolhasService classeTeste = new ValidadorDeEscolhasService();
 	
 	@Test
-	public void deveLancarErroPraEscolhasIlegaisDoUsuario() {
+	void deveLancarErroPraEscolhasIlegaisDoUsuario() {
 		assertThrows(EscolhaErradaException.class, 
-				() -> this.classeTeste.validaEscolha(0, 5, 6));
-		assertDoesNotThrow(() -> this.classeTeste.validaEscolha(0, 5, 2));
+				() -> this.classeTeste.validarEscolha(0, 5, 6));
+		assertDoesNotThrow(() -> this.classeTeste.validarEscolha(0, 5, 2));
 	}
 
 }

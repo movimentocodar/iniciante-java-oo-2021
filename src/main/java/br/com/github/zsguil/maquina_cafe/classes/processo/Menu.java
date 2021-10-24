@@ -13,7 +13,7 @@ public final class Menu extends SistemaInterno {
 		this.bebidas = super.getBebidas();
 	}
 	
-	public void mostraOpcoesBebidas() {
+	public void mostrarMenu() {
 		super.text().println("\n  --------- Selecione uma Opção --------- \n");
 
 		for(int key = 1; key <= 5; key++) {
@@ -23,7 +23,7 @@ public final class Menu extends SistemaInterno {
 				
 		super.text().println("\n  ------------- 0. Desliga -------------");
 
-		new InformacoesDoSistemaService().mostraInformacoes();
+		new InformacoesDoSistemaService().mostrarInformacoes();
 		
 	}
 

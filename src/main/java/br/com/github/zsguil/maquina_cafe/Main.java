@@ -11,7 +11,7 @@ public class Main extends SistemaInterno {
 	public static void main(String[] args) {				
 		
 		while(true) {
-			new Menu().mostraOpcoesBebidas();
+			new Menu().mostrarMenu();
 			new EscolhaPedido().fazerEscolha();
 			
 			new PrintService().println("\n \n \n \n \n \n \n \n \n");

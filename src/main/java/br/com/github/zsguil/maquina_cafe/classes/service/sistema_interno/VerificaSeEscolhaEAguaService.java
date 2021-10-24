@@ -7,13 +7,13 @@ import br.com.github.zsguil.maquina_cafe.sistema.abstracts.interfaces.bebidas.IB
 
 public class VerificaSeEscolhaEAguaService extends SistemaInterno {
 
-	public boolean verifica(int escolha) {
+	public boolean verificar(int escolha) {
 		IBebida bebidaEscolhida = (IBebida) super.getBebidas().get(escolha);
 		return bebidaEscolhida.getPreco() == BigDecimal.ZERO;
 	}
 
-	public void verificaELancaException(int escolha) {
-		if (this.verifica(escolha)) {
+	public void verificarELancarException(int escolha) {
+		if (this.verificar(escolha)) {
 			throw new IllegalArgumentException("Água quente não deve ter o pedido procesado!");
 		}
 	}

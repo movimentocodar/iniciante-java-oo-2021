@@ -4,19 +4,19 @@ import java.math.BigDecimal;
 
 import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_com_usuario.InteracaoComUsuario;
 
-public final class RecebeEscolhasDeFormaDePagamento extends InteracaoComUsuario {
+public final class EscolhaPagamentoService extends InteracaoComUsuario {
 
-	public int fazEscolhaDePagamento() {
+	public int fazerEscolhaDePagamento() {
 			super.text().println("\nFormas de pagamento: \n" 
 					+ " 1. Pagar em dinheiro \n 2. Pagar com débito");
-			return super.escolha(1, 2);
+			return super.escolher(1, 2);
 	}
 	
-	public int recebeEscolhaDinheiro() {
+	public int receberEscolhaDinheiro() {
 		return super.scanner().nextInt();
 	}
 	
-	public BigDecimal recebeEscolhaDebito() {
+	public BigDecimal receberEscolhaDebito() {
 		return super.scanner().nextBigDecimal();
 	}
 

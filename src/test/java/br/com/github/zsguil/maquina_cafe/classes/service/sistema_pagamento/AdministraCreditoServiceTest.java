@@ -10,11 +10,12 @@ class AdministraCreditoServiceTest {
 
 	@Test
 	void deveRetornarTrueSomenteQuandoCreditoForMaiorOuIgual() {
-		assertTrue(new AdministraCreditoService()
-				.verificaSeCreditoESobrejacente(BigDecimal.ZERO));
 		
-		assertFalse(new AdministraCreditoService()
-				.verificaSeCreditoESobrejacente(BigDecimal.ONE));
+		assertTrue(new AdministradorDeCreditoService()
+				.verificarSeCreditoESobrejacente(BigDecimal.ZERO));
+		
+		assertFalse(new AdministradorDeCreditoService()
+				.verificarSeCreditoESobrejacente(BigDecimal.ONE));
 	}
 
 }

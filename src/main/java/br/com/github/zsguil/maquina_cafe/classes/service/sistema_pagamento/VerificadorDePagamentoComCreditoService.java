@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 
 import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.sistemas.SistemaPagamento;
 
-public class PagamentoSomenteComCreditosService extends SistemaPagamento {
+public class VerificadorDePagamentoComCreditoService extends SistemaPagamento {
 
-	public boolean verifica(int numeroPedido) {
+	public boolean verificar(int numeroPedido) {
 		BigDecimal precoBebida = super.determinaPreco(numeroPedido);
 
-		if(AdministraCreditoService.administraCredito().verificaSeCreditoESobrejacente(precoBebida)) {
-			new PagamentoBemSucedidoComCreditoService(precoBebida);
+		if(AdministradorDeCreditoService.administraCredito().verificarSeCreditoESobrejacente(precoBebida)) {
+			new RealizadorDePagamentoComCreditoService().realizarPagamento(precoBebida);
 			return true;
 		} else return false;
 	}

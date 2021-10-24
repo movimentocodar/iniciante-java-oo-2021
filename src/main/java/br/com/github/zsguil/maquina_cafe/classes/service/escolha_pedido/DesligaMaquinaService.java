@@ -4,8 +4,8 @@ import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_com
 
 public final class DesligaMaquinaService extends InteracaoComUsuario {
 
-	public DesligaMaquinaService() {
-		super.carregando("Desligando");
+	public void desligar() {
+		super.carregar("Desligando");
 		super.text().println("_____________________________________");
 		System.exit(0);
 	}

@@ -13,15 +13,15 @@ public abstract class InteracaoComUsuario extends SistemaInterno {
 		return this.scannerService;
 	}
 	
-	public int escolha(int minimo, int limite) {
+	public int escolher(int minimo, int limite) {
 		return new ValidadorDeEscolhasService().tryEscolha(minimo, limite);
 	}
 
-	public void pausa(int ms) {
+	public void pausar(int ms) {
 		new PausaService().pausar(ms);
 	}
 	
-	public void carregando(String texto) {
-		new CarregamentoService().carregar(texto);
+	public void carregar(String texto) {
+		new CarregamentoService().iniciarCarregamento(texto);
 	}
 }

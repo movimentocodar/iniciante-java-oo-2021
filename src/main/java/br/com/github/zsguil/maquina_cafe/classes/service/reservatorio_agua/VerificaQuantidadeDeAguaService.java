@@ -4,7 +4,7 @@ import br.com.github.zsguil.maquina_cafe.sistema.exceptions.FaltaAguaException;
 
 public final class VerificaQuantidadeDeAguaService {
 
-	public boolean verifica(int agua) {
+	public boolean verificar(int agua) {
 		try {
 			if(agua >= 50) {
 				return true;

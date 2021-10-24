@@ -10,10 +10,10 @@ public class AguaQuente extends Bebida implements IBebida {
 	private BigDecimal preco = BigDecimal.ZERO;
 	
 	@Override
-	public void preparo() {
-		super.getReservatorioAgua().usaAgua();
-		super.novoProcesso().usandoIngrediente("Esquentando água", "\nÁgua esquentada!");
-		super.pausa(500);
+	public void preparar() {
+		super.getReservatorioAgua().usarAgua();
+		super.novoProcesso().usarIngrediente("Esquentando água", "\nÁgua esquentada!");
+		super.pausar(500);
 		super.text().println("_____________________________________ \n");
 		super.text().println("Pegue sua água!");
 	}
@@ -30,7 +30,7 @@ public class AguaQuente extends Bebida implements IBebida {
 	
 	@Override
 	public String toString() {
-		return this.nome + " " + super.divisorNomePreco(this.nome.length()) + " Grátis";
+		return this.nome + " " + super.gerarDivisorNomePreco(this.nome.length()) + " Grátis";
 	}
 
 

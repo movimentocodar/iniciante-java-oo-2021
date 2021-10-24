@@ -10,17 +10,17 @@ class VerificacoesDePrecoServiceTest {
 	private VerificacoesDePrecoService classeTeste = new VerificacoesDePrecoService();
 
 	@Test
-	public void deveRetornarFalseCasoPrecoSejaMaiorQueDinheiro_ERetornarTrueCasoContrario() {
-		assertTrue(this.classeTeste.verificaCompra(BigDecimal.ONE, BigDecimal.ONE));
-		assertFalse(this.classeTeste.verificaCompra(BigDecimal.ONE, BigDecimal.TEN));
+	void deveRetornarFalseCasoPrecoSejaMaiorQueDinheiro_ERetornarTrueCasoContrario() {
+		assertTrue(this.classeTeste.verificarCompra(BigDecimal.ONE, BigDecimal.ONE));
+		assertFalse(this.classeTeste.verificarCompra(BigDecimal.ONE, BigDecimal.TEN));
 	}
 	
 	@Test
-	public void verificaOPrecoDeCadaBebida() {
-		assertEquals(new BigDecimal("0.50"), this.classeTeste.verificaPreco(1));
-		assertEquals(new BigDecimal("1.00"), this.classeTeste.verificaPreco(2));
-		assertEquals(new BigDecimal("1.50"), this.classeTeste.verificaPreco(3));
-		assertEquals(new BigDecimal("1.00"), this.classeTeste.verificaPreco(4));
+	void verificaOPrecoDeCadaBebida() {
+		assertEquals(new BigDecimal("0.50"), this.classeTeste.verificarPreco(1));
+		assertEquals(new BigDecimal("1.00"), this.classeTeste.verificarPreco(2));
+		assertEquals(new BigDecimal("1.50"), this.classeTeste.verificarPreco(3));
+		assertEquals(new BigDecimal("1.00"), this.classeTeste.verificarPreco(4));
 	}
 
 }

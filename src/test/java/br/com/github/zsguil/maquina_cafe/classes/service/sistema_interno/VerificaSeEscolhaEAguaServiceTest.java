@@ -8,14 +8,14 @@ class VerificaSeEscolhaEAguaServiceTest {
 
 	@Test
 	void deveRetornarTrueCasoParametroSejaAgua_EFalseCasoContrario() {
-		assertTrue(new VerificaSeEscolhaEAguaService().verifica(5));
-		assertFalse(new VerificaSeEscolhaEAguaService().verifica(1));
+		assertTrue(new VerificaSeEscolhaEAguaService().verificar(5));
+		assertFalse(new VerificaSeEscolhaEAguaService().verificar(1));
 	}
 	
 	@Test
 	void deveLancarExceptionCasoParametroSejaAgua() {
 		assertThrows(IllegalArgumentException.class, 
-				() -> new VerificaSeEscolhaEAguaService().verificaELancaException(5));
+				() -> new VerificaSeEscolhaEAguaService().verificarELancarException(5));
 	}
 
 }

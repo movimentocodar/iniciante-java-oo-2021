@@ -5,7 +5,7 @@ import br.com.github.zsguil.maquina_cafe.classes.service.reservatorio_agua.Verif
 public final class ReservatorioDeAgua {
 	private static int reservatorioAgua = 1000;
 	
-	public void usaAgua() {
+	public void usarAgua() {
 		ReservatorioDeAgua.reservatorioAgua -= 50;
 	}
 	
@@ -13,9 +13,9 @@ public final class ReservatorioDeAgua {
 		return ReservatorioDeAgua.reservatorioAgua;
 	}
 
-	public boolean verificaAgua() {
+	public boolean verificarAgua() {
 		return new VerificaQuantidadeDeAguaService()
-				.verifica(this.getReservatorioAgua());
+				.verificar(this.getReservatorioAgua());
 	}
 	
 }

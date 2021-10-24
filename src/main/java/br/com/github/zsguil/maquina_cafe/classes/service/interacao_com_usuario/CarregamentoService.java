@@ -4,12 +4,12 @@ import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_com
 
 public final class CarregamentoService extends InteracaoComUsuario {
 
-	public void carregar(String texto) {
-		super.pausa(500);
+	public void iniciarCarregamento(String texto) {
+		super.pausar(500);
 		super.text().println(texto + "...");
-		super.pausa(500);
+		super.pausar(500);
 		super.text().println(texto + "......");
-		super.pausa(500);
+		super.pausar(500);
 	}
 	
 }

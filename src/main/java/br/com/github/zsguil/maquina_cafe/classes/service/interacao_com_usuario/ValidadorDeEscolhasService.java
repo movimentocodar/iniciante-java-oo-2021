@@ -15,10 +15,10 @@ public final class ValidadorDeEscolhasService extends InteracaoComUsuario {
 			
 			try {
 				
-				this.validaEscolha(minimo, limite, escolha);
+				this.validarEscolha(minimo, limite, escolha);
 				
 			} catch (EscolhaErradaException ex) {
-				this.pausa(500);
+				this.pausar(500);
 				super.text().println(ex);
 				super.text().println("");
 				super.scanner().reset();
@@ -33,14 +33,14 @@ public final class ValidadorDeEscolhasService extends InteracaoComUsuario {
 			super.scanner().reset();
 			super.scanner().next();
 			super.text().println("Insira novamente:");
-			this.escolha(minimo, limite);
+			this.escolher(minimo, limite);
 		}
 
 		return escolha;
 		
 	}
 	
-	public void validaEscolha(int minimo, int limite, int escolha) {
+	public void validarEscolha(int minimo, int limite, int escolha) {
 		if (escolha < minimo || escolha > limite)
 			throw new EscolhaErradaException(escolha, limite, minimo);
 	}

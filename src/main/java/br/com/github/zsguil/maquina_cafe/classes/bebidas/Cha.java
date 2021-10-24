@@ -11,23 +11,23 @@ public class Cha extends Bebida implements IBebidaEspecial {
 	private int nivelAcucar;
 	
 	@Override
-	public void preparo() {
+	public void preparar() {
 		super.novoProcesso().ferverAgua();
-		super.novoProcesso().usandoIngrediente("Adicionando chá", "\n Concluído!");
-		this.usaAcucar();
-		super.novoProcesso().terminoBebida(this.nome);	
+		super.novoProcesso().usarIngrediente("Adicionando chá", "\n Concluído!");
+		this.usarAcucar();
+		super.novoProcesso().terminarBebida(this.nome);	
 	}
 	
 	@Override
-	public void separaAcucar(int acucar) {
+	public void separarAcucar(int acucar) {
 		this.nivelAcucar = acucar;
 	}
 
 	@Override
-	public void usaAcucar() {
+	public void usarAcucar() {
 		if(this.nivelAcucar != 0)
 			super.novoProcesso()
-			.usandoIngrediente("Colocando " + this.nivelAcucar + " colheres de açúcar", "Açúcar adicionado");
+			.usarIngrediente("Colocando " + this.nivelAcucar + " colheres de açúcar", "Açúcar adicionado");
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class Cha extends Bebida implements IBebidaEspecial {
 	
 	@Override
 	public String toString() {
-		return this.nome + " " + super.divisorNomePreco(this.nome.length()) 
+		return this.nome + " " + super.gerarDivisorNomePreco(this.nome.length()) 
 			+ " R$" + this.preco;
 	}
 	

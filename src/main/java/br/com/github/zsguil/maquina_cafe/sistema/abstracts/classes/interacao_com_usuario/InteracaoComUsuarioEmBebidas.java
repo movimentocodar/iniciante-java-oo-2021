@@ -2,7 +2,7 @@ package br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_co
 
 public abstract class InteracaoComUsuarioEmBebidas extends InteracaoComUsuario {
 
-	public static String divisorNomePreco(int caracteresDoNome) {
+	public static String gerarDivisorNomePreco(int caracteresDoNome) {
 		String divisor = "";
 		int maximoCaracteres = 24;
 		

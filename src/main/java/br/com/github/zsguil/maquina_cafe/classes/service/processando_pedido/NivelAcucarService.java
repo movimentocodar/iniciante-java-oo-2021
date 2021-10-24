@@ -4,18 +4,18 @@ import java.util.InputMismatchException;
 
 import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_com_usuario.InteracaoComUsuario;
 
-public final class EscolheNivelAcucarService extends InteracaoComUsuario {
+public final class NivelAcucarService extends InteracaoComUsuario {
 	
-	public int defineNivelAcucar() {
+	public int escolher() {
 		super.text().println("Deseja escolher o nível de açúcar? S/N");
 		
-		int escolhaNivel = this.validaResposta(super.scanner().nextLine());
+		int escolhaNivel = this.validarResposta(super.scanner().nextLine());
 
 		return escolhaNivel;
 
 	}
 	
-	public int validaResposta(String escolha) {
+	public int validarResposta(String escolha) {
 		int escolhaNivel = 3;
 
 		try {
@@ -26,7 +26,7 @@ public final class EscolheNivelAcucarService extends InteracaoComUsuario {
 			}
 			case "S", "s": {
 				super.text().println("Colheres de açúcar: 0-5. Escolha:");
-				escolhaNivel = super.escolha(0, 5);
+				escolhaNivel = super.escolher(0, 5);
 				break;
 			}
 			default:
@@ -36,8 +36,8 @@ public final class EscolheNivelAcucarService extends InteracaoComUsuario {
 			
 		} catch (InputMismatchException ex) {
 			ex.printStackTrace();
-			super.pausa(500);
-			this.defineNivelAcucar();
+			super.pausar(500);
+			this.escolher();
 		}
 		
 		return escolhaNivel;

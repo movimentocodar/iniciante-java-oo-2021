@@ -11,13 +11,13 @@ public final class DinheiroService extends SistemaPagamento implements IFormasDe
 
 		BigDecimal preco = determinaPreco(numeroPedido);
 
-		if (!super.administraCredito().verificaPagamentoComCredito(preco)) {
+		if (!super.administraCredito().verificarPagamentoComCredito(preco)) {
 
 			if (this.validaCedula(dinheiro)) {
 				
-				super.administraCredito().atualizaCredito(dinheiro, preco);
+				super.administraCredito().atualizarCredito(dinheiro, preco);
 				super.text().println(compraBemSucedida());
-				super.pausa(500);
+				super.pausar(500);
 			
 			} else insereDinheiro(numeroPedido, super.scanner().nextInt());
 		}

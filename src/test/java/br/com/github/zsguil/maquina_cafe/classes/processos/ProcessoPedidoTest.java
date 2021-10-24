@@ -5,24 +5,24 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.github.zsguil.maquina_cafe.classes.processo.ProcessandoPedido;
+import br.com.github.zsguil.maquina_cafe.classes.processo.ProcessoPedido;
 
-class ProcessandoPedidoTest {
+class ProcessoPedidoTest {
 	private int numeroPedido;
 	
-	private ProcessandoPedido processandoPedido = new ProcessandoPedido();
+	private ProcessoPedido processoPedido = new ProcessoPedido();
 	
 	//---------------------------------------------------------------------------------------------//
 	
 	@Test
-	public void deveLancarErroQuandoProcessarPedidoInvalido() {
+	void deveLancarErroQuandoProcessarPedidoInvalido() {
 		
 		this.numeroPedido = 5;
 		assertThrows(IllegalArgumentException.class, () ->
-		this.processandoPedido.processando(numeroPedido));
+		this.processoPedido.processar(numeroPedido));
 		
 		this.numeroPedido = 1;
 		assertDoesNotThrow(() -> 
-		this.processandoPedido.processando(numeroPedido));
+		this.processoPedido.processar(numeroPedido));
 	}
 }

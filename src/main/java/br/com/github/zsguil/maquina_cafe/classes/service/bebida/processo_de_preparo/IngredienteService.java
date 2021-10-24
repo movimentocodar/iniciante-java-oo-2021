@@ -2,14 +2,14 @@ package br.com.github.zsguil.maquina_cafe.classes.service.bebida.processo_de_pre
 
 import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.interacao_com_usuario.InteracaoComUsuario;
 
-public class UsarIngredienteService extends InteracaoComUsuario {
+public class IngredienteService extends InteracaoComUsuario {
 
-	public UsarIngredienteService(String processando, String concluido) {
+	public void usarNovoIngrediente(String processando, String concluido) {
 		super.text().println("");
-		super.carregando(processando);
-		super.carregando(processando + "......");
+		super.carregar(processando);
+		super.carregar(processando + "......");
 		super.text().println(concluido);
-		super.pausa(250);
+		super.pausar(250);
 	}
 	
 }

@@ -7,11 +7,11 @@ import br.com.github.zsguil.maquina_cafe.sistema.abstracts.interfaces.bebidas.IB
 
 public class VerificacoesDePrecoService extends SistemaPagamento {
 
-	public boolean verificaCompra(BigDecimal dinheiro, BigDecimal preco) {
-		return dinheiro.add(AdministraCreditoService.getCredito()).compareTo(preco) >= 0;
+	public boolean verificarCompra(BigDecimal dinheiro, BigDecimal preco) {
+		return dinheiro.add(AdministradorDeCreditoService.getCredito()).compareTo(preco) >= 0;
 	}
 	
-	public BigDecimal verificaPreco(int numero) {
+	public BigDecimal verificarPreco(int numero) {
 		IBebidaEspecial bebida = (IBebidaEspecial) super.getBebidas().get(numero);
 		return bebida.getPreco();
 	}

@@ -11,7 +11,7 @@ public final class DebitoService extends SistemaPagamento implements IFormasDePa
 	public boolean iniciaPagamento(int numeroPedido, BigDecimal dinheiro) {
 		BigDecimal preco = determinaPreco(numeroPedido);
 	
-		if(!super.administraCredito().verificaPagamentoComCredito(preco)) {
+		if(!super.administraCredito().verificarPagamentoComCredito(preco)) {
 			this.usaSaldo(dinheiro, preco);
 		}
 		
@@ -21,10 +21,10 @@ public final class DebitoService extends SistemaPagamento implements IFormasDePa
 
 	protected void usaSaldo(BigDecimal dinheiro, BigDecimal preco) {
 		if (super.verificaSePodeComprar(dinheiro, preco)) {
-			super.administraCredito().atualizaCredito(dinheiro, preco);
+			super.administraCredito().atualizarCredito(dinheiro, preco);
 			
 			super.text().println(compraBemSucedida());
-			super.pausa(500);
+			super.pausar(500);
 			
 		} else throw new DinheiroInsuficienteException();
 	}

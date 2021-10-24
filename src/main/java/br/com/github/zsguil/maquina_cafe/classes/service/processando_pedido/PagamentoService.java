@@ -13,28 +13,28 @@ public final class PagamentoService extends SistemaPagamento {
 		this.numeroPedido = numeroPedido;
 	}
 
-	public void escolhaFormaPagamento() {		
-		this.escolhaPagamento = new RecebeEscolhasDeFormaDePagamento().fazEscolhaDePagamento();
+	public void escolherFormaPagamento() {		
+		this.escolhaPagamento = new EscolhaPagamentoService().fazerEscolhaDePagamento();
 		
 	}
 	
-	public boolean valida() {
+	public boolean validar() {
 
 		if (this.escolhaPagamento == 1) {
 			super.text().println("Insira o dinheiro abaixo:");
-			return super.usaDinheiro(this.numeroPedido, this.escolhaDinheiro());
+			return super.usaDinheiro(this.numeroPedido, this.escolherDinheiro());
 		} else {
 			super.text().println("Insira o valor abaixo:");
-			return super.usaDebito(this.numeroPedido, this.escolhaValorDebito());
+			return super.usaDebito(this.numeroPedido, this.escolherValorDebito());
 		}
 	}
 	
-	private int escolhaDinheiro() {
-		return new RecebeEscolhasDeFormaDePagamento().recebeEscolhaDinheiro();
+	private int escolherDinheiro() {
+		return new EscolhaPagamentoService().receberEscolhaDinheiro();
 	}
 	
-	private BigDecimal escolhaValorDebito() {
-		return new RecebeEscolhasDeFormaDePagamento().recebeEscolhaDebito();
+	private BigDecimal escolherValorDebito() {
+		return new EscolhaPagamentoService().receberEscolhaDebito();
 	}
 
 }

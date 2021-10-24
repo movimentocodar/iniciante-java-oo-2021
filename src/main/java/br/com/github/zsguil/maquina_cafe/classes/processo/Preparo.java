@@ -7,29 +7,25 @@ import br.com.github.zsguil.maquina_cafe.sistema.abstracts.interfaces.bebidas.IB
 public class Preparo extends InteracaoComUsuario {
 	private int escolha;
 		
-	public Preparo(int escolha, int acucar) {
-		this.escolha = escolha;
-		this.preparoDaBebida(acucar);
-	}
-	
 	public Preparo(int escolha) {
-		this.preparoDaBebida();
-		super.pausa(500);
+		this.escolha = escolha;
 	}
 	
 	
 	// Preparando as bebidas
 	
-	public void preparoDaBebida(int acucar) {				
+	public void prepararBebida(int acucar) {
+		super.pausar(500);
 		IBebidaEspecial bebida = (IBebidaEspecial) super.getBebidas().get(this.escolha);
-		bebida.separaAcucar(acucar);
-		bebida.preparo();
-		super.pausa(2000);
+		bebida.separarAcucar(acucar);
+		bebida.preparar();
+		super.pausar(2000);
 	}
 	
-	public void preparoDaBebida() {
+	public void prepararBebida() {
+		super.pausar(500);
 		AguaQuente bebida = (AguaQuente) super.getBebidas().get(5);
-		bebida.preparo();
-		super.pausa(2000);
+		bebida.preparar();
+		super.pausar(2000);
 	}
 }
