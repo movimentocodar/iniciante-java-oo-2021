@@ -7,7 +7,7 @@ import br.com.mentoria.cafeteira.cafeteira.ReservatorioAgua;
 
 public class Bebida {
 	
-	public void prepararBebida(OpcoesBebida bebida, ReservatorioAgua reservatorio) {
+	public int prepararBebida(OpcoesBebida bebida, ReservatorioAgua reservatorio) {
 		
 		Display display = new Display();		
 		
@@ -17,8 +17,10 @@ public class Bebida {
 		reservatorio.utilizarAgua(bebida.getUsoAgua());
 		
 		display.imprime( "Preparando " + bebida.name() + "\n"
-			+ "com " + nivelAcucar + ". Adicionando " 
-			+ bebida.getIngredientes() + "\n Pronto." );
+			+ "com nível de açúcar: " + nivelAcucar + ".\n"
+			+ "Adicionando " + bebida.getIngredientes() + "\nPronto." );
+		
+		return bebida.getIndex();
 
 	}
 	

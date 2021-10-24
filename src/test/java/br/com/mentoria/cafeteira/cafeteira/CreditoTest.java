@@ -2,10 +2,8 @@ package br.com.mentoria.cafeteira.cafeteira;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import br.com.mentoria.cafeteira.cafeteira.bebidas.Bebida;
 import br.com.mentoria.cafeteira.cafeteira.bebidas.OpcoesBebida;
 
 class CreditoTest {

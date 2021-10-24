@@ -1,5 +1,7 @@
 package br.com.mentoria.cafeteira.cafeteira;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -7,7 +9,7 @@ public class Menu {
 	Display display = new Display();
 	
 	public void menuInicial() {		
-		int inicio;
+		int inicio;		
 		
 		do {
 			Scanner opcaoInicial = new Scanner(System.in);
@@ -42,13 +44,13 @@ public class Menu {
 		
 		if(opcaoInserida == 1) {
 			Scanner notaInserida = new Scanner(System.in);
-			new Display().imprime("Entre com o n�mero da nota desejada:\n"
-					+ "2 - R$ 2,00\n"
-					+ "5 - R$ 5,00\n"
-					+ "10 - R$ 10,00\n"
-					+ "20 - R$ 20,00\n"
-					+ "50 - R$ 50,00\n"
-					+ "100 - R$ 100,00");
+			
+			display.imprime("Entre com a nota desejada:");
+			
+			List<Integer> notas = Arrays.asList(2, 5, 10, 20, 50, 100);
+			notas.stream()
+				.forEach(n -> display.imprime(n + " - R$ " + n + ".00"));
+			
 			double nota = notaInserida.nextInt();
 			totalCredito = new Credito().adicionarCredito(nota);
 			
@@ -66,15 +68,15 @@ public class Menu {
 	}
 	
 	public void menuPedido() {
-			
+		
 		Scanner opcaoBebida = new Scanner(System.in);
-		display.imprime("Entre com o n�mero da bebida desejada:\n"
+		display.imprime("Entre com o número da bebida desejada:\n"
 				+ "1 - Café - R$ 0.50\n"
 				+ "2 - Café com leite - R$ 1.00 \n"
 				+ "3 - Capuccino - R$ 1.50\n"
 				+ "4 - Chá de limão - R$ 1.00\n"
 				+ "5 - Água quente - FREE");
-
+		
 	    new Pedido().realizarPedido(opcaoBebida.nextInt());
 	}
 	
