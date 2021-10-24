@@ -2,22 +2,35 @@ package br.com.github.zsguil.maquina_cafe.classes.bebidas;
 
 import java.math.BigDecimal;
 
-import br.com.github.zsguil.maquina_cafe.classes.abstracts.Bebida;
-import br.com.zsguil.maquina_cafe.interfaces.BebidasEspeciais;
+import br.com.github.zsguil.maquina_cafe.sistema.abstracts.classes.bebida.Bebida;
+import br.com.github.zsguil.maquina_cafe.sistema.abstracts.interfaces.bebidas.IBebidaEspecial;
 
-public class CafeLeite extends Bebida implements BebidasEspeciais {
+public class CafeLeite extends Bebida implements IBebidaEspecial {
 	private String nome = "Café com leite";
 	private BigDecimal preco = new BigDecimal("1.00");
-	
+	private int nivelAcucar;
 		
 	@Override
-	public void preparo(int acucar) {
-		super.ferverAgua();
-		super.usandoIngrediente("Adicionando café", "Concluído!");
-		super.usandoIngrediente("Colocando leite", "Pronto!");
-		super.acucar(acucar);
-		super.terminoBebida(this.nome);
+	public void preparo() {
+		super.novoProcesso().ferverAgua();
+		super.novoProcesso().usandoIngrediente("Adicionando café", "\n Concluído!");
+		super.novoProcesso().usandoIngrediente("Colocando leite", "\n Concluído!");
+		this.usaAcucar();
+		super.novoProcesso().terminoBebida(this.nome);	
 	}
+	
+	@Override
+	public void separaAcucar(int acucar) {
+		this.nivelAcucar = acucar;
+	}
+
+	@Override
+	public void usaAcucar() {
+		if(this.nivelAcucar != 0)
+			super.novoProcesso()
+			.usandoIngrediente("Colocando " + this.nivelAcucar + " colheres de açúcar", "Açúcar adicionado");
+	}
+	
 	
 	@Override
 	public BigDecimal getPreco() {
