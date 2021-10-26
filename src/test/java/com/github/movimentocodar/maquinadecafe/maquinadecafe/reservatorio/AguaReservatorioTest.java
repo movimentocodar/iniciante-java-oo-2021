@@ -14,12 +14,10 @@ class AguaReservatorioTest {
 
     @Test
     void verificarSeJogaExceptionCasoCapacidadeDoReservatorioForNegativa() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             AguaReservatorio aguaReservatorioInvalida = new AguaReservatorio(new CapacidadeReservatorio(-10));
-            fail("Exemption não foi jogada");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
 
     @Test
@@ -30,12 +28,10 @@ class AguaReservatorioTest {
 
     @Test
     void abastecerAguaDoReservatorioCasoTenhaCapacidadeInsuficiente() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(1100);
-            fail("Não jogou a Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido!"));
     }
 
     @Test
@@ -47,33 +43,27 @@ class AguaReservatorioTest {
 
     @Test
     void tentarAbastecerReservatorio2VezesComCapacidadeInsuficiente() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(300);
             aguaReservatorio.abastecer(800);
-            fail("Não jogou a Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido!"));
     }
 
     @Test
     void tentarAbastecerReservatorioComValorZero() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(0);
-            fail("Não jogou a Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido!"));
     }
 
     @Test
     void tentarAbastecerReservatorioComValorNegativo() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(-10);
-            fail("Não jogou a Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido!"));
     }
 
     @Test
@@ -84,35 +74,29 @@ class AguaReservatorioTest {
 
     @Test
     void verificarSeUsarAguaJogaExceptionComValorMaiorQueQuantidadeDisponivel() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(50);
             aguaReservatorio.usarAgua(300);
-            fail("Exception não foi jogada");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test
     void verificarSeUsarAguaJogaExceptionComValorNegativo() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(200);
             aguaReservatorio.usarAgua(-10);
-            fail("Exception não foi jogada");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test
     void verificarSeUsarAguaJogaExceptionComValorZero() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             aguaReservatorio.abastecer(200);
-            aguaReservatorio.usarAgua(0);
-            fail("Exception não foi jogada");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido", e.getMessage());
-        }
+            aguaReservatorio.usarAgua(-10);
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test

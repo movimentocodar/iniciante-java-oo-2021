@@ -21,22 +21,17 @@ class CapacidadeReservatorioTest {
 
     @Test
     void setCapacidadeCasoValorForIgualAZero() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             capacidadeReservatorio.setCapacidade(0);
-            fail("Não jogou uma Exception!");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
 
     @Test
     void setCapacidadeCasoValorForMenorQueZero() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             capacidadeReservatorio.setCapacidade(-200);
-            fail("Não jogou uma Exception!");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
-
 }

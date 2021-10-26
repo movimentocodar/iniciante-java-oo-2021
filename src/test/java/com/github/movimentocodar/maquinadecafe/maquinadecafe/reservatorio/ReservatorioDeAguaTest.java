@@ -38,22 +38,18 @@ class ReservatorioDeAguaTest {
 
     @Test
     void verificarSeJogaExceptionCasoCapacidadeForNegativa() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             reservatorioDeAgua.mudarCapacidadeDoReservatorio(-200);
-            fail("Exception não foi jogada");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
 
     @Test
     void verificarSeJogaExceptionCasoCapacidadeForZero() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             reservatorioDeAgua.mudarCapacidadeDoReservatorio(0);
-            fail("Exception não foi jogada");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
 
     @Test
@@ -64,86 +60,70 @@ class ReservatorioDeAguaTest {
 
     @Test
     void verificaSeJogaExceptionNoUsarAguaCasoValorForNegativo() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             reservatorioDeAgua.abastecerReservatorio(200);
             reservatorioDeAgua.usarAgua(-50);
-            fail("Não Jogou Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test
     void verificaSeJogaExceptionNoUsarAguaCasoValorForZero() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             reservatorioDeAgua.abastecerReservatorio(200);
             reservatorioDeAgua.usarAgua(0);
-            fail("Não Jogou Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test
     void verificaSeJogaExceptionCasoAbastecerForMaiorQueCapacidade() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             reservatorioDeAgua.mudarCapacidadeDoReservatorio(100);
             reservatorioDeAgua.abastecerReservatorio(200);
-            fail("Não Jogou Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test
     void verificaSeJogaExceptionCasoAbastecerForNegativo() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             reservatorioDeAgua.mudarCapacidadeDoReservatorio(100);
             reservatorioDeAgua.abastecerReservatorio(-10);
-            fail("Não Jogou Exception");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido"));
     }
 
     @Test
     void verificarSeJogaExceptionCasoCapacidadeForNegativaNoConstrutor() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             ReservatorioDeAgua reservatorioDeAguaComCapacidadeCustomizada = new ReservatorioDeAgua(-500);
-            fail("Não Jogou Exception!");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
 
     @Test
     void verificarSeJogaExceptionCasoCapacidadeForZeroNoConstrutor() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             ReservatorioDeAgua reservatorioDeAguaComCapacidadeCustomizada = new ReservatorioDeAgua(0);
-            fail("Não Jogou Exception!");
-        } catch (Exception e) {
-            assertEquals("Capacidade do Reservatorio não pode ser < ou = 0", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Capacidade do Reservatorio não pode ser < ou = 0"));
     }
 
     @Test
     void verificarSeJogaExceptionCasoQuantidadeDeAguaForMaiorQueCapacidadeNoConstrutor() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             ReservatorioDeAgua reservatorioDeAguaComCapacidadeCustomizada = new ReservatorioDeAgua(500, 1000);
-            fail("Não Jogou Exception!");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido!"));
     }
 
     @Test
     void verificarSeJogaExceptionCasoQuantidadeDeAguaForNegativoNoConstrutor() {
-        try {
+        Exception e = assertThrows(Exception.class , () -> {
             ReservatorioDeAgua reservatorioDeAguaComCapacidadeCustomizada = new ReservatorioDeAgua(500, -10);
-            fail("Não Jogou Exception!");
-        } catch (Exception e) {
-            assertEquals("Valor Invalido!", e.getMessage());
-        }
+        });
+        assertTrue(e.getMessage().contains("Valor Invalido!"));
     }
 
     @Test
