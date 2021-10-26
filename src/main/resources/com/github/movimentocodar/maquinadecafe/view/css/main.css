@@ -1,0 +1,26 @@
+.label {
+    -fx-alignment: center;
+    -fx-font-size: 14;
+}
+
+.button {
+    -fx-font-weight: bold;
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #888888;
+    -fx-cursor: hand;
+}
+
+#title, #creditsTitle, #labelMyCredits, #depositarTitle, #nivelAcucarTitle, #labelValorDaBebida {
+    -fx-text-fill: white;
+}
+
+#sliderAcucar {
+    -fx-text-fill: white;
+}
+.root {
+    -fx-background-color: #111111;
+}
