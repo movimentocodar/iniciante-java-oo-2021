@@ -1,3 +1,10 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+.idea
+.idea/libraries
+/out/
+src/main/java/br.com.movimentocodar.maquinadecafe/teste.java
+target/classes/
+target/generated-sources/
+target/maven-status/
