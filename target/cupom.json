@@ -1,14 +1,66 @@
 [ {
-  "NOV21-4907398655736" : {
-    "valor" : 3.50,
-    "validade" : "01/02/2022",
-    "ativo" : true,
-    "codigo" : "NOV21-4907398655736"
-  },
-  "NOV21-4907398786602" : {
-    "valor" : 99.00,
-    "validade" : "01/02/2022",
-    "ativo" : true,
-    "codigo" : "NOV21-4907398786602"
-  }
+  "valor" : 48.50,
+  "ativo" : true,
+  "codigo" : "NOV21-4907469908172",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 99.50,
+  "ativo" : true,
+  "codigo" : "NOV21-4907470000326",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 49.50,
+  "ativo" : true,
+  "codigo" : "NOV21-4907470233741",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 48.50,
+  "ativo" : true,
+  "codigo" : "NOV21-4907471432178",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 48.50,
+  "ativo" : true,
+  "codigo" : "NOV21-BHacNq8t",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 49.00,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3JYRATGE======",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 18.50,
+  "ativo" : true,
+  "codigo" : "NOV21-0HR9OJA9TC======",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 49.00,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3JYU55HA======",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 49.00,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3JYVLRPE======",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 49.00,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3JYWWYIA======",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 19.00,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3JYZD5UM=====",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 49.00,
+  "ativo" : true,
+  "codigo" : "NOV21-38ac679ec802f7152a883637b757a9e66fd10f2b",
+  "validade" : "02/02/2022"
+}, {
+  "valor" : 48.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3JY6CYG",
+  "validade" : "02/02/2022"
 } ]

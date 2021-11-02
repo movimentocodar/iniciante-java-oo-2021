@@ -1,16 +1,24 @@
 package br.com.movimentocodar.maquinadecafe;
 
-import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SequenceWriter;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.sql.Timestamp;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Pagamento {
     private BigDecimal valor;
     private boolean encontrouMaiorValor = false;
     private int metodoDePagamento;
+    private List<Cupom> cupons;
 
     public Pagamento(BigDecimal valor){
         this.valor = valor;
@@ -32,8 +40,37 @@ public class Pagamento {
         return "R$ " + valor.setScale(2, RoundingMode.HALF_EVEN);
     }
 
-    public boolean executarCobranca(int MetodoDePagamento, Cupons cupons) throws JsonParseException, IOException {
+    public void lerJSON() throws IOException {
+        byte[] mapData = Files.readAllBytes(Paths.get("target/cupom.json"));
+        ObjectMapper mapper = new ObjectMapper();
+        if (mapData.length > 0){
+            this.cupons = new ArrayList<Cupom>(Arrays.asList(mapper.readValue(mapData, Cupom[].class)));
+        } else {
+            this.cupons = new ArrayList<Cupom>();
+        }
+    }
+
+    public void gravarJSON() throws IOException {
+        File file = new File("target/cupom.json");
+        FileWriter fileWriter = new FileWriter(file, false);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            SequenceWriter seqWriter = mapper.writerWithDefaultPrettyPrinter().writeValues(fileWriter);
+            seqWriter.write(this.cupons);
+
+            seqWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Cupom encontrarCupom(String codigo){
+        return this.cupons.stream().filter(c -> c.getCodigo().equals(codigo)).findAny().get();
+    }
+
+    public boolean executarCobranca(int MetodoDePagamento) throws IOException {
         this.metodoDePagamento = MetodoDePagamento;
+        if(this.cupons == null){ lerJSON();} //quando executar app
         // 1: Pagamento em dinheiro
         // 2: Pagamento em cartão de débito
         // 3: Utilizar voucher
@@ -54,11 +91,10 @@ public class Pagamento {
                     BigDecimal troco = selecionarReais.pedirSelecaoReaisAoUsuario(this.valor);
 
                     if(troco.compareTo(BigDecimal.ZERO) > 0){
-                        //cupons.lerJSON();
-                        gerarCupom(troco, cupons);
-                        cupons.gravarJSON();
+                        Cupom novoCupom = new Cupom(troco);
+                        this.cupons.add(novoCupom);
+                        gravarJSON();
                     }
-
                     return true;
 
                 } else {
@@ -71,49 +107,40 @@ public class Pagamento {
                 System.out.println("Transação aprovada");
                 return true;
             }else if(MetodoDePagamento == 3) {
-                //cupons.lerJSON();
+                //Cupom.lerJSON();
                 CafeScanner procurarCupom = new CafeScanner("Favor digitar o código do cupom.");
-                Cupom cupom = procurarCupom.pedirCodigoCupom(cupons);
+                Cupom cupom = procurarCupom.pedirCodigoCupom(this);
                 if(cupom.getAtivo()) {
                     if (cupom.checaValidade()) {
                         cupom.inativarCupom();
                         BigDecimal troco = this.valor.subtract(cupom.getValor());
                         if (troco.compareTo(BigDecimal.ZERO) < 0) {
                             troco = cupom.getValor().subtract(this.valor);
-                            gerarCupom(troco, cupons);
-                            cupons.gravarJSON();
+                            Cupom novoCupom = new Cupom(troco);
+                            this.cupons.add(novoCupom);
+                            gravarJSON();
                             return true;
                         } else if (troco.compareTo(BigDecimal.ZERO) == 0) {
                             System.out.println("Cupom aceito com sucesso!");
-                            cupons.gravarJSON();
+                            gravarJSON();
                             return true;
                         } else {
                             System.out.println("Cupom aceito com sucesso. Faltam " + moedaEmReais(troco) + ".");
                             this.valor = troco;
-                            cupons.gravarJSON();
+                            gravarJSON();
                         }
                     } else {
                         System.out.println("Cupom expirado! Favor escolher utilizar outro cupom ou escolher outro método de pagamento.");
-                        cupons.gravarJSON();
+                        gravarJSON();
                     }
                 } else {
-                    cupons.gravarJSON();
+                    gravarJSON();
                     System.out.println("Cupom expirado! Utilize um código ativo e dentro da validade, ou outro método de pagamento.");
                     System.out.println("Caso tenha tentado utilizar o cupom com troco de outro cupom, verifique se foi gerado um novo código.");
                 }
             }
             return false;
         }
-
-    private void gerarCupom(BigDecimal troco, Cupons cupons) {
-        Timestamp agora = new Timestamp(System.currentTimeMillis());
-        Cupom novoCupom = new Cupom(troco, agora, true);
-        cupons.addCupom(novoCupom.getCodigo(), novoCupom);
-
-        System.out.println("O valor excedente é de " + moedaEmReais(troco) + ".");
-        System.out.println("ATENÇÃO: anote o código do cupom no valor de " + moedaEmReais(troco) + ": " + novoCupom.getCodigo());
-        System.out.println("Válido apenas para compras na Máquina de Café até " + novoCupom.getValidade());
-    }
 
     public BigDecimal calcularQuantidadeDeDinheiro(BigDecimal valor, NotasEMoedas Real, BigDecimal contagem, boolean SegundaSugestao){
         int quantidadeDeREAL;

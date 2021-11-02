@@ -18,11 +18,10 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws JsonParseException, IOException {
         ReservatorioDeAgua ReservatorioDeAgua = new ReservatorioDeAgua();
-        Cupons cupons = new Cupons();
-        inicializarMaquina(ReservatorioDeAgua, cupons);
+        inicializarMaquina(ReservatorioDeAgua);
     }
 
-    static void inicializarMaquina(ReservatorioDeAgua ReservatorioDeAgua, Cupons cupons) throws JsonParseException, IOException {
+    static void inicializarMaquina(ReservatorioDeAgua ReservatorioDeAgua) throws JsonParseException, IOException {
         MaquinaDeCafe MaquinaDeCafe = new MaquinaDeCafe(ReservatorioDeAgua);
 
         if (MaquinaDeCafe.ReservatorioDeAgua.reservatorioDeAguaVazio())  {
@@ -46,21 +45,21 @@ public class Main {
             do {
                 CafeScanner selecionarMetodoDePagamento = new CafeScanner("Digite 1 para pagamento em dinheiro, 2 para pagamento em cartão de débito e 3 para utilizar cupom.");
                 int MetodoDePagamento = selecionarMetodoDePagamento.pedirMetodoDePagamentoAoUsuario();
-                sucesso = Pagamento.executarCobranca(MetodoDePagamento, cupons);
+                sucesso = Pagamento.executarCobranca(MetodoDePagamento);
             }while(!sucesso);
 
             MaquinaDeCafe.determinarNivelDeAcucar();
             MaquinaDeCafe.liberarBebida();
         }
 
-        finalizacao(ReservatorioDeAgua, cupons);
+        finalizacao(ReservatorioDeAgua);
     }
 
-    private static void finalizacao(ReservatorioDeAgua ReservatorioDeAgua, Cupons cupons) throws JsonParseException, IOException{
+    private static void finalizacao(ReservatorioDeAgua ReservatorioDeAgua) throws JsonParseException, IOException{
         System.out.println("Retire a bebida e obrigado por utilizar a máquina de café.");
         CafeScanner finalizar = new CafeScanner("Digite 'sair' para sair ou 'iniciar' para comprar outra bebida.", "iniciar");
         finalizar.pedirConfirmacaoUsuario();
-        inicializarMaquina(ReservatorioDeAgua, cupons);
+        inicializarMaquina(ReservatorioDeAgua);
     }
 
 }

@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 .idea
-.idea/libraries
+.idea/libraries/
 /out/
 src/main/java/br.com.movimentocodar.maquinadecafe/teste.java
 target/classes/
