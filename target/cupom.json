@@ -63,4 +63,9 @@
   "ativo" : true,
   "codigo" : "NOV21-AR3JY6CYG",
   "validade" : "02/02/2022"
+}, {
+  "valor" : 18.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3KPM43S",
+  "validade" : "02/02/2022"
 } ]

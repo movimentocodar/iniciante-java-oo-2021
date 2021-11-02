@@ -143,20 +143,20 @@ public class CafeScanner {
         }
     }
 
-    public Cupom pedirCodigoCupom(Pagamento pagamento) {
+    public Cupom pedirCodigoCupom(Cupons cupons) {
         String entry = "";
         do
         {
             System.out.println(this.mensagem);
             entry = Scanner.nextLine();
             checarSair(entry);
-        } while(!cupomEncontrado(entry, pagamento));
+        } while(!cupomEncontrado(entry, cupons));
 
-        return pagamento.encontrarCupom(entry);
+        return cupons.encontrarCupom(entry);
     }
 
-    private boolean cupomEncontrado(String entry, Pagamento pagamento){
-        if(pagamento.encontrarCupom(entry) != null){
+    private boolean cupomEncontrado(String entry, Cupons cupons){
+        if(cupons.encontrarCupom(entry) != null){
             return true;
         }
         return false;
