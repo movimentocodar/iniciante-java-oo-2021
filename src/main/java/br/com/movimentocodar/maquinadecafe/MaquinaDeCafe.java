@@ -32,51 +32,53 @@ public class MaquinaDeCafe {
         System.out.println("Para sair, digite 'sair' a qualquer momento.");
     }
 
-    public Bebida getBebida(int id){
-        Bebida bebida = new Bebida();
+    public boolean encontrarBebidaPeloID(String entry){
         try{
-            bebida = menu.get(id);
-        } catch (ArrayIndexOutOfBoundsException ex){
-            throw ex;
+            this.BebidaEscolhida = menu.get(Integer.parseInt(entry));
+            assert(this.BebidaEscolhida != null): "Bebida encontrada " + this.BebidaEscolhida.toString();
+        } catch (Exception ex) {
+            return false;
         }
-        return bebida;
+
+        return true;
     }
 
-    public void Menu(){
+    public void menu(){
         for (Bebida bebida : menu) {
             System.out.println(bebida.getId() + " - " + bebida.toString() + " - " + (bebida.getPreco().compareTo(BigDecimal.ZERO) == 0? "grátis" : Pagamento.moedaEmReais(bebida.getPreco())));
         }
     }
 
     public void liberarBebida(){
-        this.ReservatorioDeAgua.liberarAguaParaUmaBebida();
+        try {
+            this.ReservatorioDeAgua.liberarAguaParaUmaBebida();
 
-        if (NivelAcucarEscolhido == null){
-            NivelAcucarEscolhido = Acucar.NIVEL_0;
+            if (NivelAcucarEscolhido == null) {
+                NivelAcucarEscolhido = Acucar.NIVEL_0;
+            }
+            this.BebidaEscolhida.receita.preparar(NivelAcucarEscolhido);
+            System.out.println("Retire a bebida e obrigado por utilizar a máquina de café.");
+        } catch (Exception ex){
+            System.out.println("Necessário escolher uma bebida primeiro e ter reservatórios de água cheios");
         }
-
-        this.BebidaEscolhida.receita.preparar(NivelAcucarEscolhido);
     }
 
     public Bebida selecionarBebida(){
         CafeScanner selecionarBebida = new CafeScanner("Digite o número da bebida escolhida");
-        this.BebidaEscolhida = selecionarBebida.pedirSelecaoBebidaDoUsuario(this);
+        selecionarBebida.pedirSelecaoBebidaDoUsuario(this);
+        System.out.println("A bebida escolhida foi " + this.BebidaEscolhida.toString());
 
         return this.BebidaEscolhida;
     }
 
-    public void determinarNivelDeAcucar(){
+    public Acucar determinarNivelDeAcucar(){
         System.out.println("--Favor escolher um nível de açúcar para sua bebida--");
         Acucar NiveisDeAcucar[] = Acucar.values();
         for (Acucar nivel : NiveisDeAcucar) {
             nivel.imprimirNiveisDeAcucar();
         }
         CafeScanner nivelDeAcucar = new CafeScanner("Digite o número do nível de açúcar escolhido.");
-        this.NivelAcucarEscolhido = nivelDeAcucar.pedirSelecaoAcucarDoUsuario();
+        return this.NivelAcucarEscolhido = nivelDeAcucar.pedirSelecaoAcucarDoUsuario();
     }
-
-
-
-
 
 }

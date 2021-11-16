@@ -1,7 +1,5 @@
 package br.com.movimentocodar.maquinadecafe;
 
-import com.fasterxml.jackson.core.JsonParseException;
-
 import java.io.IOException;
 
 /**
@@ -16,13 +14,13 @@ import java.io.IOException;
  */
 
 public class Main {
-    public static void main(String[] args) throws JsonParseException, IOException {
+    public static void main(String[] args) throws IOException {
         ReservatorioDeAgua ReservatorioDeAgua = new ReservatorioDeAgua();
         Cupons cupons = new Cupons();
         inicializarMaquina(ReservatorioDeAgua, cupons);
     }
 
-    static void inicializarMaquina(ReservatorioDeAgua ReservatorioDeAgua, Cupons cupons) throws JsonParseException, IOException {
+    static void inicializarMaquina(ReservatorioDeAgua ReservatorioDeAgua, Cupons cupons) throws IOException {
         MaquinaDeCafe MaquinaDeCafe = new MaquinaDeCafe(ReservatorioDeAgua);
 
         if (MaquinaDeCafe.ReservatorioDeAgua.reservatorioDeAguaVazio())  {
@@ -31,33 +29,25 @@ public class Main {
             MaquinaDeCafe.ReservatorioDeAgua.completarReservatorioDeAgua();
         }
 
-        MaquinaDeCafe.Menu();
+        MaquinaDeCafe.menu();
         Bebida BebidaEscolhida = MaquinaDeCafe.selecionarBebida();
-        Pagamento Pagamento = new Pagamento(BebidaEscolhida.getPreco());
+        Pagamento pagamento = new Pagamento(BebidaEscolhida.getPreco());
 
-        if(Pagamento.Cortesia()){
+        if(pagamento.cortesia()){
             System.out.println("A bebida será de graça.");
 
             MaquinaDeCafe.liberarBebida();
-        }else{
-            System.out.println("O total é de " + Pagamento.moedaEmReais() + ".");
-
-            Boolean sucesso;
-            do {
-                CafeScanner selecionarMetodoDePagamento = new CafeScanner("Digite 1 para pagamento em dinheiro, 2 para pagamento em cartão de débito e 3 para utilizar cupom.");
-                int MetodoDePagamento = selecionarMetodoDePagamento.pedirMetodoDePagamentoAoUsuario();
-                sucesso = Pagamento.executarCobranca(MetodoDePagamento, cupons);
-            }while(!sucesso);
-
-            MaquinaDeCafe.determinarNivelDeAcucar();
-            MaquinaDeCafe.liberarBebida();
+        }else {
+            if(pagamento.executarCobranca(cupons)) {
+                MaquinaDeCafe.determinarNivelDeAcucar();
+                MaquinaDeCafe.liberarBebida();
+            }
         }
 
         finalizacao(ReservatorioDeAgua, cupons);
     }
 
-    private static void finalizacao(ReservatorioDeAgua ReservatorioDeAgua, Cupons cupons) throws JsonParseException, IOException{
-        System.out.println("Retire a bebida e obrigado por utilizar a máquina de café.");
+    private static void finalizacao(ReservatorioDeAgua ReservatorioDeAgua, Cupons cupons) throws IOException{
         CafeScanner finalizar = new CafeScanner("Digite 'sair' para sair ou 'iniciar' para comprar outra bebida.", "iniciar");
         finalizar.pedirConfirmacaoUsuario();
         inicializarMaquina(ReservatorioDeAgua, cupons);

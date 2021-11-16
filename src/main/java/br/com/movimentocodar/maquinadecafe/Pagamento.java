@@ -13,7 +13,7 @@ public class Pagamento {
         this.valor = valor;
     }
 
-    public boolean Cortesia(){
+    public boolean cortesia(){
         if (this.valor.compareTo(BigDecimal.ZERO) == 0){
             return true;
         }
@@ -29,7 +29,21 @@ public class Pagamento {
         return "R$ " + valor.setScale(2, RoundingMode.HALF_EVEN);
     }
 
-    public boolean executarCobranca(int MetodoDePagamento, Cupons cupons) throws IOException {
+    public boolean executarCobranca(Cupons cupons) throws IOException {
+        System.out.println("O total é de " + this.moedaEmReais() + ".");
+        Boolean sucesso;
+
+        do {
+            CafeScanner selecionarMetodoDePagamento = new CafeScanner("Digite 1 para pagamento em dinheiro, 2 para pagamento em cartão de débito e 3 para utilizar cupom.");
+            int MetodoDePagamento = selecionarMetodoDePagamento.pedirMetodoDePagamentoAoUsuario();
+            sucesso = this.metodosDePagamento(MetodoDePagamento, cupons);
+        } while (!sucesso);
+
+        return sucesso;
+    }
+
+
+    public boolean metodosDePagamento(int MetodoDePagamento, Cupons cupons) throws IOException {
         this.metodoDePagamento = MetodoDePagamento;
         cupons.lerJSON();
         // 1: Pagamento em dinheiro
@@ -43,20 +57,8 @@ public class Pagamento {
                 int sugestaoDePagamentoComDinheiro = selecionarSugestaoDePagamentoComDinheiro.pedirMetodoDePagamentoAoUsuario();
 
                 if(sugestaoDePagamentoComDinheiro == 3){
-                    NotasEMoedas Reais[] = NotasEMoedas.values();
-                    for (NotasEMoedas real: Reais) {
-                        real.imprimir();
-                    }
-
-                    CafeScanner selecionarReais = new CafeScanner("Favor digitar o número da nota ou moeda inserida. Atenção: essa máquina não devolve troco, apenas cupom válido por 3 meses.");
-                    BigDecimal troco = selecionarReais.pedirSelecaoReaisAoUsuario(this.valor);
-
-                    if(troco.compareTo(BigDecimal.ZERO) > 0){
-                        Cupom novoCupom = new Cupom(troco);
-                        cupons.addNovoCupom(novoCupom);
-                    }
+                    escolherQualquerReal(cupons);
                     return true;
-
                 } else {
                     System.out.println("Pagamento aceito!");
                     return true;
@@ -67,36 +69,58 @@ public class Pagamento {
                 System.out.println("Transação aprovada");
                 return true;
             }else if(MetodoDePagamento == 3) {
-                CafeScanner procurarCupom = new CafeScanner("Favor digitar o código do cupom.");
-                Cupom cupom = procurarCupom.pedirCodigoCupom(cupons);
-                if(cupom.getAtivo()) {
-                    if (cupom.checaValidade()) {
-                        cupom.inativarCupom();
-                        BigDecimal troco = this.valor.subtract(cupom.getValor());
-                        if (troco.compareTo(BigDecimal.ZERO) < 0) {
-                            troco = cupom.getValor().subtract(this.valor);
-                            Cupom novoCupom = new Cupom(troco);
-                            cupons.addNovoCupom(novoCupom);
-                            return true;
-                        } else if (troco.compareTo(BigDecimal.ZERO) == 0) {
-                            System.out.println("Cupom aceito com sucesso!");
-                            cupons.gravarJSON();
-                            return true;
-                        } else {
-                            System.out.println("Cupom aceito com sucesso. Faltam " + moedaEmReais(troco) + ".");
-                            this.valor = troco;
-                        }
-                    } else {
-                        System.out.println("Cupom expirado! Favor escolher utilizar outro cupom ou escolher outro método de pagamento.");
-                    }
-                } else {
-                    System.out.println("Cupom expirado! Utilize um código ativo e dentro da validade, ou outro método de pagamento.");
-                    System.out.println("Caso tenha tentado utilizar o cupom com troco de outro cupom, verifique se foi gerado um novo código.");
+                if(pagamentoConcluidoComCupom(cupons)){
+                    cupons.gravarJSON();
+                    return true;
                 }
             }
             cupons.gravarJSON();
             return false;
         }
+
+    private boolean pagamentoConcluidoComCupom(Cupons cupons) throws IOException {
+        CafeScanner procurarCupom = new CafeScanner("Favor digitar o código do cupom.");
+        Cupom cupom = procurarCupom.pedirCodigoCupomAoUsuario(cupons);
+        if(cupom.getAtivo()) {
+            if (cupom.checaValidade()) {
+                cupom.inativarCupom();
+                BigDecimal troco = this.valor.subtract(cupom.getValor());
+                if (troco.compareTo(BigDecimal.ZERO) < 0) {
+                    troco = cupom.getValor().subtract(this.valor);
+                    Cupom novoCupom = new Cupom(troco);
+                    cupons.addNovoCupom(novoCupom);
+                    return true;
+                } else if (troco.compareTo(BigDecimal.ZERO) == 0) {
+                    System.out.println("Cupom aceito com sucesso!");
+                    return true;
+                } else {
+                    System.out.println("Cupom aceito com sucesso. Faltam " + moedaEmReais(troco) + ".");
+                    this.valor = troco;
+                }
+            } else {
+                System.out.println("Cupom expirado! Favor escolher utilizar outro cupom ou escolher outro método de pagamento.");
+            }
+        } else {
+            System.out.println("Cupom expirado! Utilize um código ativo e dentro da validade, ou outro método de pagamento.");
+            System.out.println("Caso tenha tentado utilizar o cupom com troco de outro cupom, verifique se foi gerado um novo código.");
+        }
+        return false;
+    }
+
+    private void escolherQualquerReal(Cupons cupons) throws IOException {
+        NotasEMoedas Reais[] = NotasEMoedas.values();
+        for (NotasEMoedas real: Reais) {
+            real.imprimir();
+        }
+
+        CafeScanner selecionarReais = new CafeScanner("Favor digitar o número da nota ou moeda inserida. Atenção: essa máquina não devolve troco, apenas cupom válido por 3 meses.");
+        BigDecimal troco = selecionarReais.pedirSelecaoReaisAoUsuario(this.valor);
+
+        if(troco.compareTo(BigDecimal.ZERO) > 0){
+            Cupom novoCupom = new Cupom(troco);
+            cupons.addNovoCupom(novoCupom);
+        }
+    }
 
     public BigDecimal calcularQuantidadeDeDinheiro(BigDecimal valor, NotasEMoedas Real, BigDecimal contagem, boolean SegundaSugestao){
         int quantidadeDeREAL;

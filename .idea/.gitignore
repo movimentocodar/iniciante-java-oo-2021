@@ -2,9 +2,11 @@
 /shelf/
 /workspace.xml
 .idea
-.idea/libraries/
+/libraries
 /out/
-src/main/java/br.com.movimentocodar.maquinadecafe/teste.java
 target/classes/
 target/generated-sources/
+target/generated-test-sources/
 target/maven-status/
+target/test-classes/
+DesafioMaquinaDeCafe.iml

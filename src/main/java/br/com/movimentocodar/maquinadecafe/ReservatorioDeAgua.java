@@ -24,7 +24,12 @@ public class ReservatorioDeAgua {
         System.out.println("Reservatório de água completo, " + msgReservatorioDeAgua);
     }
 
-    public void liberarAguaParaUmaBebida(){
-        this.quantidadeDeAgua -= 50;
+    public void liberarAguaParaUmaBebida() throws Exception {
+        if(this.quantidadeDeAgua >= 50){
+            this.quantidadeDeAgua -= 50;
+        }else {
+            System.out.println("Quantidade de água abaixo do esperado");
+            throw new Exception();
+        }
     }
 }

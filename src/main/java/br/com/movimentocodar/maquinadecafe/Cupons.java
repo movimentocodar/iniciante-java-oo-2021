@@ -28,6 +28,10 @@ public class Cupons{
         return this.cupons.stream().filter(c -> c.getCodigo().equals(codigo)).findAny().get();
     }
 
+    public String encontrarUltimoCupom(){
+        return this.cupons.get(this.cupons.size()-1).getCodigo();
+    }
+
     public void lerJSON() throws IOException {
         byte[] mapData = Files.readAllBytes(Paths.get("target/cupom.json"));
         ObjectMapper mapper = new ObjectMapper();

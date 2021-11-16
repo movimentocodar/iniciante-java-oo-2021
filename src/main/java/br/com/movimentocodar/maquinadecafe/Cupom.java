@@ -31,8 +31,8 @@ public class Cupom {
         this.agora = new Timestamp(System.currentTimeMillis());
         this.valor = valor;
         this.ativo = true;
-        gerarCodigo();
-        calcularValidade();
+        this.codigo = gerarCodigo();
+        this.validade = calcularValidade();
         cupomCriado();
     }
 
@@ -42,19 +42,19 @@ public class Cupom {
         System.out.println("Válido apenas para compras na Máquina de Café até " + this.getValidade());
     }
 
-    private void gerarCodigo(){
+    private String gerarCodigo(){
         LocalDateTime dataString = this.agora.toLocalDateTime();
         long cupomNum = this.agora.getTime() * 3;
         Base32 base32 = new Base32(-1,null,false);
         String cupomStr = base32.encodeAsString(BigInteger.valueOf(cupomNum).toByteArray());
         //cupomStr = DigestUtils.sha1Hex(cupomStr);
-        this.codigo = dataString.getMonth().toString().substring(0, 3) + Integer.toString(dataString.getYear()).substring(2, 4) + "-" + cupomStr.substring(0,9);
+        return dataString.getMonth().toString().substring(0, 3) + Integer.toString(dataString.getYear()).substring(2, 4) + "-" + cupomStr.substring(0,9);
     }
 
-    public void calcularValidade() {
+    public String calcularValidade() {
         DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDateTime dataValidade = this.agora.toLocalDateTime();
-        this.validade = dataValidade.plusMonths(3).format(formatoData);
+        return dataValidade.plusMonths(3).format(formatoData);
     }
 
     public void inativarCupom(){
@@ -87,4 +87,7 @@ public class Cupom {
         return this.ativo;
     }
 
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
 }

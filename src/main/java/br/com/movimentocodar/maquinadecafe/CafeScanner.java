@@ -23,24 +23,19 @@ public class CafeScanner {
         do
         {
             System.out.println(this.mensagem);
-            entry = Scanner.nextLine();
+            entry = Scanner.next();
             checarSair(entry);
         } while(!entry.equals(this.respostaEsperada.toLowerCase()));
     }
 
-    public Bebida pedirSelecaoBebidaDoUsuario(MaquinaDeCafe MaquinaDeCafe){
+    public void pedirSelecaoBebidaDoUsuario(MaquinaDeCafe MaquinaDeCafe){
         String entry = "";
         do
         {
             System.out.println(this.mensagem);
-            entry = Scanner.nextLine();
+            entry = Scanner.next();
             checarSair(entry);
-        } while(!bebidaEncontrada(entry, MaquinaDeCafe));
-
-        Bebida BebidaEscolhida = MaquinaDeCafe.getBebida(Integer.parseInt(entry));
-        System.out.println("A bebida escolhida foi " + BebidaEscolhida.toString());
-
-        return BebidaEscolhida;
+        } while(!MaquinaDeCafe.encontrarBebidaPeloID(entry));
     }
 
     public BigDecimal pedirSelecaoReaisAoUsuario(BigDecimal preco){
@@ -53,7 +48,7 @@ public class CafeScanner {
             valorAPagar = preco.subtract(valorPago);
             System.out.println(this.mensagem);
             System.out.println("Faltam " + Pagamento.moedaEmReais(valorAPagar));
-            entry = Scanner.nextLine();
+            entry = Scanner.next();
             checarSair(entry);
             valorInserido = calcularValorInserido(entry);
             valorPago = valorPago.add(valorInserido);
@@ -81,7 +76,7 @@ public class CafeScanner {
         do
         {
             System.out.println(this.mensagem);
-            entry = Scanner.nextLine();
+            entry = Scanner.next();
             checarSair(entry);
         } while(!acucarEncontrada(entry));
 
@@ -111,7 +106,7 @@ public class CafeScanner {
         do
         {
             System.out.println(this.mensagem);
-            entry = Scanner.nextLine();
+            entry = Scanner.next();
             checarSair(entry);
         } while(!metodoEncontrado(entry));
 
@@ -126,29 +121,21 @@ public class CafeScanner {
         return false;
     }
 
-    private boolean bebidaEncontrada(String bebidaEscolhida, MaquinaDeCafe MaquinaDeCafe){
-        try{
-            MaquinaDeCafe.getBebida(Integer.parseInt(bebidaEscolhida));
-        } catch (Exception ex) {
-            return false;
-        }
 
-        return true;
-    }
 
     private void checarSair(String entry){
         if (entry.equals("sair")){
-            System.out.println("Obrigado por utilizar a máquina de café 2021.");
+            System.out.println("Obrigado por utilizar a máquina de café 2021, o programa irá encerrar agora.");
             System.exit(-1);
         }
     }
 
-    public Cupom pedirCodigoCupom(Cupons cupons) {
+    public Cupom pedirCodigoCupomAoUsuario(Cupons cupons) {
         String entry = "";
         do
         {
             System.out.println(this.mensagem);
-            entry = Scanner.nextLine();
+            entry = Scanner.next();
             checarSair(entry);
         } while(!cupomEncontrado(entry, cupons));
 
