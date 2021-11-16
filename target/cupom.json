@@ -278,4 +278,244 @@
   "ativo" : false,
   "codigo" : "NOV21-AR3YCNOXK",
   "validade" : "16/02/2022"
+}, {
+  "valor" : 1.0,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YCSRKQ",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.0,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YCSRK6",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCSRLG",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YCSRLK",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCSRLQ",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCSRLS",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCSRLW",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCSRLZ",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.0,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YCUGMG",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.0,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YCUGMT",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCUGM2",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YCUGM6",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCUGND",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCUGNG",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCUGNK",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YCUGNN",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2GY2",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC2GZS",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2GZ5",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2G2B",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2G2F",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2G2J",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2OHM",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC2OJT",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2QMO",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2RSW",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2RTH",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC2RTX",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC22II",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC22KP",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC22LS",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC22L6",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC22MP",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC22NA",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC4G7X",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC4HB6",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC4HDC",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC4HDO",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC4HD7",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC4HER",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.0,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC5JTW",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.0,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC5JUE",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 2.0,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC5JUL",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : true,
+  "codigo" : "NOV21-AR3YC5JUO",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 4.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC5JUU",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 3.00,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC5JUX",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 1.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC5JU3",
+  "validade" : "16/02/2022"
+}, {
+  "valor" : 0.50,
+  "ativo" : false,
+  "codigo" : "NOV21-AR3YC5JU6",
+  "validade" : "16/02/2022"
 } ]
