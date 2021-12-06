@@ -100,3 +100,9 @@ Para isso clique em `Contribute` e `Open Pull Request`. Depois basta confirmar a
 <img src="https://user-images.githubusercontent.com/6104963/125391895-911cd300-e37b-11eb-90d9-5b92cd8e5445.PNG" alt="Criando PR" width="40%"/>
 
 ## :trophy: Finalizaram o desafio :trophy:
+
+<a href="https://github.com/Jand-S"><img width="50" height="50" src="https://github.com/Jand-S.png"></img></a>
+<a href="https://github.com/feehvecch"><img width="50" height="50" src="https://github.com/feehvecch.png"></img></a>
+<a href="https://github.com/lilianjaf"><img width="50" height="50" src="https://github.com/lilianjaf.png"></img></a>
+<a href="https://github.com/gabrieltrudes"><img width="50" height="50" src="https://github.com/gabrieltrudes.png"></img></a>
+<a href="https://github.com/zsGuil"><img width="50" height="50" src="https://github.com/zsGuil.png"></img></a>
