@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.movimentocodar.maquinadecafe.controller.MainController">
+    <children>
+        <Label fx:id="title" layoutY="41.0" text="Máquina de Café" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Slider fx:id="sliderAcucar" blockIncrement="1.0" disable="true" layoutX="145.0" layoutY="244.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" showTickLabels="true" snapToTicks="true" value="3.0" />
+        <Label fx:id="nivelAcucarTitle" layoutX="14.0" layoutY="244.0" text="Nível de Açúcar:" />
+        <Label fx:id="creditsTitle" layoutX="16.0" layoutY="455.0" text="Crédito:" />
+        <Label fx:id="labelMyCredits" layoutX="78.0" layoutY="455.0" text="R$ 0.0" />
+        <Label fx:id="depositarTitle" layoutX="15.0" layoutY="313.0" text="Depositar:" />
+        <ChoiceBox fx:id="tipoDeposito" layoutX="15.0" layoutY="337.0" prefHeight="24.0" prefWidth="125.0" />
+        <ChoiceBox fx:id="choiceCedulas" layoutX="15.0" layoutY="378.0" prefHeight="24.0" prefWidth="125.0" visible="false" />
+        <TextField fx:id="creditValue" layoutX="15.0" layoutY="380.0" prefHeight="24.0" prefWidth="125.0" promptText="Valor ex:: 235" visible="false" />
+        <Button fx:id="btnDepositar" layoutX="160.0" layoutY="380.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="125.0" text="Depositar" visible="false" />
+        <ChoiceBox fx:id="bebidasPreparaveis" layoutX="13.0" layoutY="67.0" prefHeight="24.0" prefWidth="270.0" />
+        <Button fx:id="btnPreparar" layoutX="16.0" layoutY="162.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="270.0" text="Preparar" />
+        <Button fx:id="trocoBtn" layoutX="160.0" layoutY="426.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="125.0" text="Receber Troco" />
+        <Label fx:id="labelStatus" layoutY="131.0" textFill="#dd0000" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Label fx:id="labelValorDaBebida" layoutX="130.0" layoutY="105.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Button fx:id="abastecerBtn" layoutX="160.0" layoutY="337.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="125.0" text="Abastecer" />
+    </children>
+</AnchorPane>
