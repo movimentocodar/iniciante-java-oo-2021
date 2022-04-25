@@ -21,7 +21,7 @@ public abstract class Estoque {
     public static List<Produto> carregarProdutos() {
         estoque.add(new Produto(1, "Agua", 1000, "ml"));
         estoque.add(new Produto(2, "Po de Cafe", 1000, "g"));
-        estoque.add(new Produto(3, "Filtro", 10, "un"));
+        estoque.add(new Produto(3, "Filtro", 1000, "un"));
         estoque.add(new Produto(4, "Leite em Po", 1000, "g"));
         estoque.add(new Produto(5, "Chocolato em Po", 1000, "g"));
         estoque.add(new Produto(6, "Cha em po Limao", 1000, "g"));

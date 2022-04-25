@@ -1,47 +1,28 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Ingrediente {
 
-public class Pedido{
-
+    private final int codigo;
     private final int quantidade;
-    private final Produto produto;
-    private  static  final List<Pedido> listaPedido = new ArrayList<>();
 
-    public Pedido(Produto produto, int quantidade){
-        this.produto = produto;
-        this.quantidade = quantidade;
-
+    public int getCodigo() {
+        return codigo;
     }
 
     public int getQuantidade() {
         return quantidade;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public Ingrediente(int codigo, int quantidade) {
+        this.codigo = codigo;
+        this.quantidade = quantidade;
     }
 
     @Override
     public String toString() {
-        return "Pedido{" +
-                "quantidade=" + quantidade +
-                ", produto=" + produto +
+        return "Ingrediente{" +
+                "codigo=" + codigo +
+                ", quantidade=" + quantidade +
                 '}';
     }
-
-    public static void addPedido(Produto produto, int quantidade) {
-        Pedido pedido = new Pedido (produto, quantidade);
-        listaPedido.add(pedido);
-    }
-
-    public static List<Pedido> getListaDePedidos() {
-        return listaPedido;
-    }
-
-    public static void resetListaPedida(){
-        listaPedido.clear();
-    }
-
 }
