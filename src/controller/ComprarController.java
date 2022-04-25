@@ -16,8 +16,7 @@ public class ComprarController {
     MovimentoService movimentoService = new MovimentoService();
 
 
-
-    public void comprarProduto(int opcao, int qtdCopos){
+    public void comprarProduto(int opcao, int qtdCopos) {
         validarCompra(opcao, qtdCopos);
     }
 
@@ -31,8 +30,8 @@ public class ComprarController {
         else isPagamentoRealizado = pagamentoService.realizarPagamento(getValorTotal());
 
 
-        if(isPagamentoRealizado)
-        bebidaService.prepararBebida(getModoPreparo(), qtdCopos, itemGratis);
+        if (isPagamentoRealizado)
+            bebidaService.prepararBebida(getModoPreparo(), qtdCopos, itemGratis);
         movimentoService.atualizarEstoque(getListaDePedidos(), getQuantidadeTotalAcucar());
         Pedido.resetListaPedida();
         MenuCompra.menuCompra();
@@ -50,20 +49,20 @@ public class ComprarController {
         return itemGratis;
     }
 
-    private double getValorTotal(){
+    private double getValorTotal() {
         return estoqueService.getValorTotal();
 
     }
 
-    private Receita getModoPreparo(){
-        return  estoqueService.getModoDePreparo();
+    private Receita getModoPreparo() {
+        return estoqueService.getModoDePreparo();
     }
 
-    private  int getQuantidadeTotalAcucar(){
-       return estoqueService.getQtdTotalDeAcucar();
+    private int getQuantidadeTotalAcucar() {
+        return estoqueService.getQtdTotalDeAcucar();
     }
 
-    private List<Pedido> getListaDePedidos(){
+    private List<Pedido> getListaDePedidos() {
         return Pedido.getListaDePedidos();
     }
 
