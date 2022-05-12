@@ -1,12 +1,12 @@
-import menu.Painel;
-import model.Estoque;
-import model.Receita;
+import menu.MenuPrincipal;
+import model.ModoDePreparo;
+import model.Produto;
 
 public class MaquinaCafe {
 
     public static void main(String[] args) {
-        Estoque.carregarProdutos();
-        Receita.carregarReceita();
-        Painel.menuPrincipal();
+        Produto.criarProduto();
+        ModoDePreparo.criarModoDePreparo();
+        MenuPrincipal.menuPrincipal();
     }
 }
