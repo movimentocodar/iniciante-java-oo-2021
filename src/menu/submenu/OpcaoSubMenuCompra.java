@@ -15,7 +15,7 @@ public class OpcaoSubMenuCompra {
         Arrays.stream(menu).forEach(m -> System.out.println(ColorEnum.RESET.getColorCode()
                 + "(" + m.getCodigoMenuKey() + ")" + " - " + m.getDescricao() + ColorEnum.RESET.getColorCode()));
         System.out.println(ColorEnum.RESET.getColorCode()
-                + "(" + (menu.length + 1) + ") - Sair"  + ColorEnum.RESET.getColorCode());
+                + "(" + (menu.length + 1) + ") - Retornar"  + ColorEnum.RESET.getColorCode());
         System.out.print(ColorEnum.YELLOW.getColorCode() + "\nPor favor selecione  uma opcao desejada:  de 1 a " + (menu.length + 1) +": " + ColorEnum.RESET.getColorCode());
     }
 
