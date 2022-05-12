@@ -20,7 +20,7 @@ public class SubMenuPagamento {
 
 
     public static void menu(Bebida bebida) {
-        if (!bebida.isNotGratis()) {
+        if (bebida.isNotGratis()) {
             int opcao;
             do {
                 OpcaoSubMenuPagamento.menu();

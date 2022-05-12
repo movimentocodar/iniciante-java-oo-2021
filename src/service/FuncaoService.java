@@ -19,7 +19,7 @@ public class FuncaoService {
 
 
     public int nivelDeAcucar(Bebida bebida) {
-        if (!bebida.isNotGratis()) {
+        if (bebida.isNotGratis()) {
 
             int opcao;
 
