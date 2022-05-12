@@ -14,7 +14,7 @@ public class CalcularQuantidadeAProduzir {
     private static final Map<Produto, List<Double>> produtosEQuantidade = new HashMap<>();
     private final Estoque estoque = new Estoque();
 
-    public void produto(Bebida bebida, int qtdCopos, int nivelDeAcucar) {
+    public void bebida(Bebida bebida, int qtdCopos, int nivelDeAcucar) {
         produtosEQuantidade.clear();
 
         List<Ingrediente> ingredientes =  bebida.getIngredients();

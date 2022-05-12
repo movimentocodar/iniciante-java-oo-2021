@@ -17,7 +17,7 @@ public class IngredienteCommand implements ICommand {
     }
 
     private void calcularQuantidadeAproduzir(Bebida bebida, int qtdCopos, int nivelDeAcucar) {
-         calcularQuantidadeAProduzir.produto(bebida, qtdCopos, nivelDeAcucar);
+         calcularQuantidadeAProduzir.bebida(bebida, qtdCopos, nivelDeAcucar);
     }
 
     @Override
