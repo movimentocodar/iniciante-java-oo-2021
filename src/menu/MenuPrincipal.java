@@ -11,7 +11,7 @@ public class MenuPrincipal {
     private static final int INICIO = 1;
     private static final int FIM = 4;
 
-    private static void menu() {
+    private static void menuInicial() {
         int opcao;
 
         OpcaoMenuPrincipal.descricaoMenu();
@@ -29,8 +29,8 @@ public class MenuPrincipal {
 
     }
 
-    public static void menuPrincipal() {
-        menu();
+    public static void menu() {
+        menuInicial();
     }
 
 

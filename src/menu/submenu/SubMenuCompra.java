@@ -4,6 +4,7 @@ import Validacao.*;
 import calculadora.CalcularQuantidadeAProduzir;
 import command.*;
 import controller.*;
+import menu.MenuPrincipal;
 import menu.fabrica.Bebida;
 import menu.fabrica.FabricarBebida;
 
@@ -24,7 +25,7 @@ public class SubMenuCompra {
 
     private static final FabricarBebida fabricaDeBebida = new FabricarBebida();
     private static final EstoqueController estoqueController = new EstoqueController();
-    static FuncaoService funcaoService = new FuncaoService();
+    private static final FuncaoService funcaoService = new FuncaoService();
     private static final CalcularQuantidadeAProduzir calcularQuantidadeAProduzir = new CalcularQuantidadeAProduzir();
 
     public static void menu() {
@@ -45,7 +46,8 @@ public class SubMenuCompra {
 
         Map<Produto, List<Double>> produtosEQuantidadeAProduzir = calcularQuantidadeAProduzir.getProdutosEQuantidade();
         estoqueController.atualizarEstoque(produtosEQuantidadeAProduzir);
-    }
+        MenuPrincipal.menu();
+       }
 
     private static int getOpcao() {
         int opcao;
@@ -66,6 +68,10 @@ public class SubMenuCompra {
         } while (qtdCopos < 1);
         return qtdCopos;
     }
+
+
+
+
 
 }
 

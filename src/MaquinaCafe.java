@@ -7,6 +7,6 @@ public class MaquinaCafe {
     public static void main(String[] args) {
         PopularProdutos.criarProduto();
         PopularModoDePreparo.criarModoDePreparo();
-        MenuPrincipal.menuPrincipal();
+        MenuPrincipal.menu();
     }
 }

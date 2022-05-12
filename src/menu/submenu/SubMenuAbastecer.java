@@ -35,7 +35,7 @@ public class SubMenuAbastecer {
         } while (opcao < INICIO || opcao > FINAL);
         switch (opcao) {
             case 1 -> abastecimentoController.abastecer(produtoListMap);
-            case 2 -> MenuPrincipal.menuPrincipal();
+            case 2 -> MenuPrincipal.menu();
         }
         SubMenuCompra.menu();
 

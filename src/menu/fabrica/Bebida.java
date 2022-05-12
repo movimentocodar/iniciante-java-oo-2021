@@ -5,7 +5,6 @@ import Validacao.OpcaoSimNaoValidator;
 import Validacao.ValidarOpcaoSimNao;
 import enumerator.ColorEnum;
 import menu.submenu.OpcaoSubMenuRetirada;
-import menu.submenu.SubMenuCompra;
 import model.Ingrediente;
 import util.InputScanner;
 import util.PopularModoDePreparo;
@@ -73,7 +72,6 @@ public abstract class Bebida {
             opcao = input.entrada();
             ValidarOpcaoSimNao.valida(new OpcaoSimNaoValidator(), opcao, 1, 1);
         } while (opcao != 1);
-        SubMenuCompra.menu();
     }
 
 }
