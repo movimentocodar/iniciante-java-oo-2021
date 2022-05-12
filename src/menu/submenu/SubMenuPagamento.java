@@ -1,17 +1,13 @@
 package menu.submenu;
 
 import Validacao.OpcaoMenuValidator;
-import Validacao.OpcaoPainelValidator;
+
 import Validacao.ValidarOpcao;
-import controller.VendaController;
-import enumerator.ColorEnum;
-import enumerator.MenuPagamentoEnum;
+
 import menu.fabrica.Bebida;
 import menu.fabrica.FabricaMenuPagamento;
 import util.InputScanner;
 
-import java.text.DecimalFormat;
-import java.util.Arrays;
 
 public class SubMenuPagamento {
     private static final InputScanner inputScanner = new InputScanner();

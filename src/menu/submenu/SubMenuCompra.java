@@ -18,19 +18,15 @@ import static mensagem.MensagemInformarQuantidadeDeCopos.mensagemInformarQuantid
 
 public class SubMenuCompra {
 
-    private static final InputScanner input = new InputScanner() {
-        @Override
-        public int entrada() {
-            return super.entrada();
-        }
-    };
+    private static final InputScanner input = new InputScanner();
     private static final int INICIO = 1;
     private static final int FINAL = 6;
 
     private static final FabricarBebida fabricaDeBebida = new FabricarBebida();
     private static final EstoqueController estoqueController = new EstoqueController();
     static FuncaoService funcaoService = new FuncaoService();
-    private  static final CalcularQuantidadeAProduzir calcularQuantidadeAProduzir = new CalcularQuantidadeAProduzir();
+    private static final CalcularQuantidadeAProduzir calcularQuantidadeAProduzir = new CalcularQuantidadeAProduzir();
+
     public static void menu() {
 
         int opcao = getOpcao();
@@ -39,7 +35,7 @@ public class SubMenuCompra {
 
         Bebida bebida = fabricaDeBebida.getBebida(opcao);
 
-        int  nivelDeAcucar =  funcaoService.nivelDeAcucar(bebida);
+        int nivelDeAcucar = funcaoService.nivelDeAcucar(bebida);
 
         GerarPedidoHandler.processarPedido(bebida, qtdCopos, nivelDeAcucar);
 
@@ -49,9 +45,6 @@ public class SubMenuCompra {
 
         Map<Produto, List<Double>> produtosEQuantidadeAProduzir = calcularQuantidadeAProduzir.getProdutosEQuantidade();
         estoqueController.atualizarEstoque(produtosEQuantidadeAProduzir);
-
-        SubMenuCompra.menu();
-
     }
 
     private static int getOpcao() {

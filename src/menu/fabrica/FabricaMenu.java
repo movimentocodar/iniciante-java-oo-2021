@@ -14,12 +14,7 @@ public class FabricaMenu {
     private static final int ABASTECER = 2;
     private static final int SAIR = 3;
     private static final MenuPrincipalEnum[] menu = MenuPrincipalEnum.values();
-    private static final InputScanner fechar = new InputScanner() {
-        @Override
-        public void sair() {
-            super.sair();
-        }
-    };
+    private static final InputScanner fechar = new InputScanner();
 
     public static void getMenu(int opcaoMenu) {
         obterDescricaoDoMenu(opcaoMenu);

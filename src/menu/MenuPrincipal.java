@@ -7,12 +7,7 @@ import util.InputScanner;
 
 public class MenuPrincipal {
 
-    private static final InputScanner inputScanner = new InputScanner() {
-        @Override
-        public int entrada() {
-            return super.entrada();
-        }
-    };
+    private static final InputScanner inputScanner = new InputScanner();
     private static final int INICIO = 1;
     private static final int FIM = 4;
 

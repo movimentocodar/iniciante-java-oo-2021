@@ -5,6 +5,7 @@ import Validacao.OpcaoSimNaoValidator;
 import Validacao.ValidarOpcaoSimNao;
 import enumerator.ColorEnum;
 import menu.submenu.OpcaoSubMenuRetirada;
+import menu.submenu.SubMenuCompra;
 import model.Ingrediente;
 import util.InputScanner;
 import util.PopularModoDePreparo;
@@ -12,12 +13,7 @@ import util.PopularModoDePreparo;
 import java.util.List;
 
 public abstract class Bebida {
-    private static final InputScanner input = new InputScanner() {
-        @Override
-        public int entrada() {
-            return super.entrada();
-        }
-    };
+    private static final InputScanner input = new InputScanner();
 
     public abstract List<Ingrediente> getIngredients();
 
@@ -77,6 +73,7 @@ public abstract class Bebida {
             opcao = input.entrada();
             ValidarOpcaoSimNao.valida(new OpcaoSimNaoValidator(), opcao, 1, 1);
         } while (opcao != 1);
+        SubMenuCompra.menu();
     }
 
 }

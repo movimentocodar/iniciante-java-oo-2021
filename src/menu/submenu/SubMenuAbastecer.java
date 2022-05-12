@@ -17,12 +17,7 @@ import java.util.Map;
 
 public class SubMenuAbastecer {
     private static final AbastecimentoController abastecimentoController = new AbastecimentoController();
-    private static final InputScanner input = new InputScanner() {
-        @Override
-        public int entrada() {
-            return super.entrada();
-        }
-    };
+    private static final InputScanner input = new InputScanner();
     private static final int INICIO = 1;
     private static final int FINAL = 2;
     static int opcao;

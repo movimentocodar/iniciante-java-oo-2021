@@ -7,12 +7,7 @@ import util.InputScanner;
 
 public class FuncaoService {
 
-    private static final InputScanner input = new InputScanner() {
-        @Override
-        public int entrada() {
-            return super.entrada();
-        }
-    };
+    private static final InputScanner input = new InputScanner();
 
 
     private int novoNivel = 3;
