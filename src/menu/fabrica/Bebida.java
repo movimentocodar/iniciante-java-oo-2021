@@ -6,8 +6,8 @@ import Validacao.ValidarOpcaoSimNao;
 import enumerator.ColorEnum;
 import menu.submenu.OpcaoSubMenuRetirada;
 import model.Ingrediente;
-import model.ModoDePreparo;
 import util.InputScanner;
+import util.PopularModoDePreparo;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public abstract class Bebida {
     }
 
     public boolean isNotGratis() {
-        return false;
+        return true;
     }
 
     public final void prepararBebida(Bebida bebida, int qdtCopos) {
@@ -53,7 +53,7 @@ public abstract class Bebida {
 
             getModoDePreparo(bebida.getClass().getName().substring(8));
 
-            if (!isNotGratis()) {
+            if (isNotGratis()) {
                 addAcucar();
             }
 
@@ -65,7 +65,7 @@ public abstract class Bebida {
     }
 
     private void getModoDePreparo(String modoDePreparo) {
-        String modo = ModoDePreparo.getModoPreparo(modoDePreparo);
+        String modo = PopularModoDePreparo.getModoPreparo(modoDePreparo);
         System.out.println(ColorEnum.GREEN.getColorCode() + modo + ColorEnum.RESET.getColorCode());
     }
 

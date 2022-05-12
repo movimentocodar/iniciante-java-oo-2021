@@ -28,7 +28,7 @@ public class AguaQuente extends Bebida {
     }
 
     @Override
-    public boolean isNotGratis(){return  true;}
+    public boolean isNotGratis(){return  false;}
 
 }
 
