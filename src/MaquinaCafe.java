@@ -1,12 +1,12 @@
 import menu.MenuPrincipal;
-import model.ModoDePreparo;
-import model.Produto;
+import util.PopularModoDePreparo;
+import util.PopularProdutos;
 
 public class MaquinaCafe {
 
     public static void main(String[] args) {
-        Produto.criarProduto();
-        ModoDePreparo.criarModoDePreparo();
+        PopularProdutos.criarProduto();
+        PopularModoDePreparo.criarModoDePreparo();
         MenuPrincipal.menuPrincipal();
     }
 }

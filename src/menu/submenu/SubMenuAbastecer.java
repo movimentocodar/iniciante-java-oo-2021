@@ -8,6 +8,7 @@ import menu.MenuPrincipal;
 
 import model.Produto;
 import util.InputScanner;
+import util.PopularProdutos;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class SubMenuAbastecer {
     public static void abastecer() {
 
         Map<Produto, List<Double>> produtoListMap = new HashMap<>();
-        Produto.getListaDeProdutos().forEach(p -> produtoListMap.put(p, Collections.singletonList(p.getQuantidade())));
+        PopularProdutos.getListaDeProdutos().forEach(p -> produtoListMap.put(p, Collections.singletonList(p.getQuantidade())));
 
         do {
             OpcaoSubMenuReabastecer.menu();
