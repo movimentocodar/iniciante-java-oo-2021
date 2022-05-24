@@ -1,9 +1,9 @@
-package calculadora;
+package br.com.hugoogle.calculadora;
 
-import menu.fabrica.Bebida;
-import model.Estoque;
-import model.Ingrediente;
-import model.Produto;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.model.Estoque;
+import br.com.hugoogle.model.Ingrediente;
+import br.com.hugoogle.model.Produto;
 
 import java.util.*;
 

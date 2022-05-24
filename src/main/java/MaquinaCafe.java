@@ -1,6 +1,6 @@
-import menu.MenuPrincipal;
-import util.PopularModoDePreparo;
-import util.PopularProdutos;
+import br.com.hugoogle.menu.MenuPrincipal;
+import br.com.hugoogle.util.PopularModoDePreparo;
+import br.com.hugoogle.util.PopularProdutos;
 
 public class MaquinaCafe {
 

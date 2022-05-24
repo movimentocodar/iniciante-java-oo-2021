@@ -1,6 +1,6 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import interfaces.IMenuValidator;
+import br.com.hugoogle.interfaces.IMenuValidator;
 
 public class ValidarOpcao {
     public static <T> void valida(IMenuValidator<T> validatorMenu, T opcao, T inicio, T fim) {

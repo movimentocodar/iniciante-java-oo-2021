@@ -1,8 +1,8 @@
-package menu.submenu;
+package br.com.hugoogle.menu.submenu;
 
-import controller.VendaController;
-import enumerator.ColorEnum;
-import enumerator.MenuPagamentoEnum;
+import br.com.hugoogle.controller.VendaController;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.MenuPagamentoEnum;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;

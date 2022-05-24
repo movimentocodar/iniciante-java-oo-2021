@@ -1,14 +1,15 @@
-package menu.submenu;
+package br.com.hugoogle.menu.submenu;
 
-import Validacao.OpcaoSimNaoValidator;
-import Validacao.ValidarOpcaoSimNao;
-import controller.AbastecimentoController;
+import br.com.hugoogle.Validacao.OpcaoSimNaoValidator;
+import br.com.hugoogle.Validacao.ValidarOpcaoSimNao;
+import br.com.hugoogle.controller.AbastecimentoController;
 
-import menu.MenuPrincipal;
+import br.com.hugoogle.menu.MenuPrincipal;
 
-import model.Produto;
-import util.InputScanner;
-import util.PopularProdutos;
+import br.com.hugoogle.model.Produto;
+import br.com.hugoogle.service.AbastecimentoService;
+import br.com.hugoogle.util.InputScanner;
+import br.com.hugoogle.util.PopularProdutos;
 
 import java.util.Collections;
 import java.util.HashMap;

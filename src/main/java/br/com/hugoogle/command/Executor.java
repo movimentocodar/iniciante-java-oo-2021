@@ -1,6 +1,6 @@
-package command;
+package br.com.hugoogle.command;
 
-import interfaces.ICommand;
+import br.com.hugoogle.interfaces.ICommand;
 
 import java.util.List;
 

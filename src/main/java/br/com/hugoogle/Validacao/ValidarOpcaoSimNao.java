@@ -1,6 +1,6 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import interfaces.IOpcaoSimNaoValidator;
+import br.com.hugoogle.interfaces.IOpcaoSimNaoValidator;
 
 public class ValidarOpcaoSimNao {
 

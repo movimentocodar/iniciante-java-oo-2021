@@ -1,6 +1,6 @@
-package mensagem;
+package br.com.hugoogle.mensagem;
 
-import enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.ColorEnum;
 
 public class MensagemProdutoReabastecido {
 

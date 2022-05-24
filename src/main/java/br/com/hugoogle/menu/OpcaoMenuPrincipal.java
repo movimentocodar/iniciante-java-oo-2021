@@ -1,7 +1,7 @@
-package menu;
+package br.com.hugoogle.menu;
 
-import enumerator.ColorEnum;
-import enumerator.MenuPrincipalEnum;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.MenuPrincipalEnum;
 
 import java.util.Arrays;
 

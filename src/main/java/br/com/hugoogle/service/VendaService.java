@@ -1,6 +1,6 @@
-package service;
+package br.com.hugoogle.service;
 
-import interfaces.IVenda;
+import br.com.hugoogle.interfaces.IVenda;
 
 public class VendaService implements IVenda {
 

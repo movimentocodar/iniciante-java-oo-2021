@@ -1,7 +1,7 @@
-package controller;
+package br.com.hugoogle.controller;
 
 
-import interfaces.IPagamento;
+import br.com.hugoogle.interfaces.IPagamento;
 public class PagamentoController {
 
     public void efetuarPagamento(double valor, IPagamento pagamento){

@@ -1,7 +1,7 @@
-package bebidas;
+package br.com.hugoogle.bebidas;
 
-import menu.fabrica.Bebida;
-import model.Ingrediente;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.model.Ingrediente;
 
 import java.util.ArrayList;
 import java.util.Collections;

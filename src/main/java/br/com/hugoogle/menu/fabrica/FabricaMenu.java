@@ -1,10 +1,10 @@
-package menu.fabrica;
+package br.com.hugoogle.menu.fabrica;
 
-import enumerator.ColorEnum;
-import enumerator.MenuPrincipalEnum;
-import menu.submenu.SubMenuAbastecer;
-import menu.submenu.SubMenuCompra;
-import util.InputScanner;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.MenuPrincipalEnum;
+import br.com.hugoogle.menu.submenu.SubMenuAbastecer;
+import br.com.hugoogle.menu.submenu.SubMenuCompra;
+import br.com.hugoogle.util.InputScanner;
 
 import java.util.Arrays;
 

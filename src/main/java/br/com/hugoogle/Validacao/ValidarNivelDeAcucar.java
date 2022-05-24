@@ -1,7 +1,7 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import enumerator.ColorEnum;
-import util.InputScanner;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.util.InputScanner;
 
 public class ValidarNivelDeAcucar {
     private static final InputScanner input = new InputScanner();

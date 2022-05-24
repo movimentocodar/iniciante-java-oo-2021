@@ -1,9 +1,9 @@
-package service;
+package br.com.hugoogle.service;
 
-import Validacao.ValidaOpcaoNivelPadrao;
-import Validacao.ValidarNivelDeAcucar;
-import mensagem.MensagemNivelPadraoDeAcucar;
-import menu.fabrica.Bebida;
+import br.com.hugoogle.Validacao.ValidaOpcaoNivelPadrao;
+import br.com.hugoogle.Validacao.ValidarNivelDeAcucar;
+import br.com.hugoogle.mensagem.MensagemNivelPadraoDeAcucar;
+import br.com.hugoogle.menu.fabrica.Bebida;
 
 public class FuncaoService {
 

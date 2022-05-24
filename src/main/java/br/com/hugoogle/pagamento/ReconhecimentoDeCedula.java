@@ -1,6 +1,6 @@
-package pagamento;
+package br.com.hugoogle.pagamento;
 
-import enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.ColorEnum;
 
 public class ReconhecimentoDeCedula {
 

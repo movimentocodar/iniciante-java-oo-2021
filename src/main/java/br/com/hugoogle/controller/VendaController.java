@@ -1,6 +1,6 @@
-package controller;
+package br.com.hugoogle.controller;
 
-import service.VendaService;
+import br.com.hugoogle.service.VendaService;
 
 public class VendaController {
 

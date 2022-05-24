@@ -1,4 +1,4 @@
-package model;
+package br.com.hugoogle.model;
 
 public class Produto {
 

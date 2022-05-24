@@ -1,11 +1,9 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import command.EstoqueCommand;
-import enumerator.QuantidadeEnum;
-import mensagem.MensagemQuantidadeMaiorQueDisponivel;
-import mensagem.MensagemQuantidadeMaiorQueMaxima;
-import menu.fabrica.Bebida;
-import model.Produto;
+import br.com.hugoogle.enumerator.QuantidadeEnum;
+import br.com.hugoogle.mensagem.MensagemQuantidadeMaiorQueMaxima;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.model.Produto;
 
 import java.util.List;
 import java.util.Map;

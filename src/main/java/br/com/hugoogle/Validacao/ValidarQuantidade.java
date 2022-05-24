@@ -1,6 +1,6 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import interfaces.IQtdCoposValidator;
+import br.com.hugoogle.interfaces.IQtdCoposValidator;
 
 public class ValidarQuantidade {
 

@@ -1,13 +1,13 @@
-package menu.fabrica;
+package br.com.hugoogle.menu.fabrica;
 
 
-import Validacao.OpcaoSimNaoValidator;
-import Validacao.ValidarOpcaoSimNao;
-import enumerator.ColorEnum;
-import menu.submenu.OpcaoSubMenuRetirada;
-import model.Ingrediente;
-import util.InputScanner;
-import util.PopularModoDePreparo;
+import br.com.hugoogle.Validacao.OpcaoSimNaoValidator;
+import br.com.hugoogle.Validacao.ValidarOpcaoSimNao;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.menu.submenu.OpcaoSubMenuRetirada;
+import br.com.hugoogle.model.Ingrediente;
+import br.com.hugoogle.util.InputScanner;
+import br.com.hugoogle.util.PopularModoDePreparo;
 
 import java.util.List;
 
@@ -21,9 +21,9 @@ public abstract class Bebida {
 
     public void mensagem(Bebida bebida, int numeroDaBebida) {
         System.out.println(ColorEnum.GREEN.getColorCode()
-                + "Inicinado preparo!\n"
+                + "Iniciando preparo!\n"
                 + ColorEnum.RESET.getColorCode()
-                + "- Bebida " + bebida.getClass().getName().substring(8)  + " de numero "
+                + "- Bebida " + bebida.getClass().getName().substring(24)  + " de numero "
                 + numeroDaBebida + " -");
     }
 
@@ -46,7 +46,7 @@ public abstract class Bebida {
             numeroDaBebida += 1;
             mensagem(bebida, numeroDaBebida);
 
-            getModoDePreparo(bebida.getClass().getName().substring(8));
+            getModoDePreparo(bebida.getClass().getName().substring(24));
 
             if (isNotGratis()) {
                 addAcucar();

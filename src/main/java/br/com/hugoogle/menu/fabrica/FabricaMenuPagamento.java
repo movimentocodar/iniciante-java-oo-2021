@@ -1,12 +1,12 @@
-package menu.fabrica;
+package br.com.hugoogle.menu.fabrica;
 
-import interfaces.IPagamento;
+import br.com.hugoogle.interfaces.IPagamento;
 
-import pagamento.CartaoDeDebito;
-import pagamento.Dinheiro;
-import pagamento.Pagamento;
+import br.com.hugoogle.pagamento.CartaoDeDebito;
+import br.com.hugoogle.pagamento.Dinheiro;
+import br.com.hugoogle.pagamento.Pagamento;
 
-import util.InputScanner;
+import br.com.hugoogle.util.InputScanner;
 
 
 public class FabricaMenuPagamento {

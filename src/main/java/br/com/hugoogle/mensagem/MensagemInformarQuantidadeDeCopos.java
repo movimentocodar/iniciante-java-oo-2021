@@ -1,4 +1,4 @@
-package mensagem;
+package br.com.hugoogle.mensagem;
 
 public class MensagemInformarQuantidadeDeCopos {
 

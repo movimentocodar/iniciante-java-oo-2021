@@ -1,4 +1,4 @@
-package util;
+package br.com.hugoogle.util;
 
 import java.util.Scanner;
 

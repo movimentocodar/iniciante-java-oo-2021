@@ -1,16 +1,22 @@
-package mensagem;
+package br.com.hugoogle.mensagem;
 
-import enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.ColorEnum;
 
 public class MensagemMaquinaAbastecida {
 
-    private void mensagemAbastecida() {
-        System.out.println(ColorEnum.GREEN.getColorCode() + "*** Maquina se encontra abastecida!  *** \n" + ColorEnum.RESET.getColorCode());
+    private String mensagemAbastecida() {
+        return ColorEnum.GREEN.getColorCode() + "*** Maquina se encontra abastecida!  *** \n" + ColorEnum.RESET.getColorCode();
+    }
+
+    private String mensagemDesabastecida() {
+        return ColorEnum.GREEN.getColorCode() + "*** Maquina se encontra desabastecida!  *** \n" + ColorEnum.RESET.getColorCode();
     }
 
     public  void maquinaAbastecida(boolean abastecida) {
         if (abastecida) {
-            mensagemAbastecida();
+            System.out.println(mensagemAbastecida());
+        } else {
+            System.out.println(mensagemDesabastecida());
         }
     }
 }

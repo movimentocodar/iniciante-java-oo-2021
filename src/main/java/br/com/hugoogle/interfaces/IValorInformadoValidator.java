@@ -1,7 +1,7 @@
-package interfaces;
+package br.com.hugoogle.interfaces;
 
 
-import Validacao.ValidatorException;
+import br.com.hugoogle.Validacao.ValidatorException;
 
 public interface IValorInformadoValidator<T> {
 

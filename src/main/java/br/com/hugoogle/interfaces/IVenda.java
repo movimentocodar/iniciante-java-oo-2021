@@ -1,4 +1,4 @@
-package interfaces;
+package br.com.hugoogle.interfaces;
 
 public interface IVenda {
 

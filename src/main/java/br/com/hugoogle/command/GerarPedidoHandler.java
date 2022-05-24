@@ -1,10 +1,11 @@
-package command;
+package br.com.hugoogle.command;
 
-import Validacao.ValidarEstoque;
+import br.com.hugoogle.Validacao.ValidarEstoque;
 import br.com.hugoogle.calculadora.CalcularQuantidadeAProduzir;
-import interfaces.ICommand;
-import menu.fabrica.Bebida;
-import model.Produto;
+import br.com.hugoogle.interfaces.ICommand;
+import br.com.hugoogle.mensagem.MensagemQuantidadeMaiorQueMaxima;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.model.Produto;
 
 import java.util.ArrayList;
 import java.util.List;

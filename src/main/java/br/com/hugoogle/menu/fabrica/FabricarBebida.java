@@ -1,6 +1,5 @@
-package menu.fabrica;
+package br.com.hugoogle.menu.fabrica;
 
-import bebidas.*;
 import br.com.hugoogle.bebidas.*;
 
 public class FabricarBebida {

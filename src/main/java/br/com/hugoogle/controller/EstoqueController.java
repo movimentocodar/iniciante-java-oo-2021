@@ -1,7 +1,7 @@
-package controller;
+package br.com.hugoogle.controller;
 
-import model.Produto;
-import service.EstoqueService;
+import br.com.hugoogle.model.Produto;
+import br.com.hugoogle.service.EstoqueService;
 
 import java.util.List;
 import java.util.Map;

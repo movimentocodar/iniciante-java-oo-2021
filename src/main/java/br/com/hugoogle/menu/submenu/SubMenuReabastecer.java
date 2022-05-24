@@ -1,9 +1,10 @@
-package menu.submenu;
+package br.com.hugoogle.menu.submenu;
 
-import Validacao.*;
-import menu.fabrica.FabricaMenuReabastecer;
+import br.com.hugoogle.Validacao.OpcaoSimNaoValidator;
+import br.com.hugoogle.Validacao.ValidarOpcaoSimNao;
+import br.com.hugoogle.menu.fabrica.FabricaMenuReabastecer;
 
-import util.InputScanner;
+import br.com.hugoogle.util.InputScanner;
 
 
 public class SubMenuReabastecer {

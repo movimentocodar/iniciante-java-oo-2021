@@ -1,7 +1,7 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import enumerator.ColorEnum;
-import interfaces.IOpcaoSimNaoValidator;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.interfaces.IOpcaoSimNaoValidator;
 
 public class OpcaoSimNaoValidator implements IOpcaoSimNaoValidator<Integer> {
 

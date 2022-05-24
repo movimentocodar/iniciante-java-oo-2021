@@ -1,4 +1,4 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
 public class ValidatorException extends Exception {
 

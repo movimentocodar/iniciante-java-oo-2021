@@ -1,7 +1,7 @@
-package pagamento;
+package br.com.hugoogle.pagamento;
 
-import enumerator.ColorEnum;
-import util.InputScanner;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.util.InputScanner;
 
 public class AdicionarCredito {
     private final InputScanner inputScanner = new InputScanner();

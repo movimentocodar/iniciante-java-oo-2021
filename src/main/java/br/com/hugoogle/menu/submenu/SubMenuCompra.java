@@ -1,21 +1,24 @@
-package menu.submenu;
+package br.com.hugoogle.menu.submenu;
 
-import Validacao.*;
+import br.com.hugoogle.Validacao.OpcaoMenuValidator;
+import br.com.hugoogle.Validacao.QtdCoposValidator;
+import br.com.hugoogle.Validacao.ValidarOpcao;
+import br.com.hugoogle.Validacao.ValidarQuantidade;
 import br.com.hugoogle.calculadora.CalcularQuantidadeAProduzir;
-import command.*;
-import controller.*;
-import menu.MenuPrincipal;
-import menu.fabrica.Bebida;
-import menu.fabrica.FabricarBebida;
+import br.com.hugoogle.command.GerarPedidoHandler;
+import br.com.hugoogle.controller.EstoqueController;
+import br.com.hugoogle.menu.MenuPrincipal;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.menu.fabrica.FabricarBebida;
 
-import model.Produto;
-import service.FuncaoService;
-import util.InputScanner;
+import br.com.hugoogle.model.Produto;
+import br.com.hugoogle.service.FuncaoService;
+import br.com.hugoogle.util.InputScanner;
 
 import java.util.List;
 import java.util.Map;
 
-import static mensagem.MensagemInformarQuantidadeDeCopos.mensagemInformarQuantidadeDeCopos;
+import static br.com.hugoogle.mensagem.MensagemInformarQuantidadeDeCopos.mensagemInformarQuantidadeDeCopos;
 
 public class SubMenuCompra {
 

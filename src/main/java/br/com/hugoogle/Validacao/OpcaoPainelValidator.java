@@ -1,15 +1,13 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import enumerator.ColorEnum;
-import interfaces.IMenuValidator;
-import menu.MenuPrincipal;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.interfaces.IMenuValidator;
+import br.com.hugoogle.menu.MenuPrincipal;
 
 public class OpcaoPainelValidator implements IMenuValidator<Integer> {
-   // private MenuPrincipal menuPrincipal =  new MenuPrincipal();
     @Override
     public void valida(Integer opcao, Integer inicio, Integer fim) throws ValidatorException {
         System.out.println((opcao < inicio || opcao > fim) ? ColorEnum.RED.getColorCode() + "\nOPCAO INVALIDA!\n" : "" + ColorEnum.RESET.getColorCode());
-       // System.out.print(ColorEnum.YELLOW.getColorCode() + "\nPor favor selecione  uma opcao desejada:  de 1 a " + fim +  ": " + ColorEnum.RESET.getColorCode());
         if (opcao.equals(fim)) {
             new MenuPrincipal();
             MenuPrincipal.menu();

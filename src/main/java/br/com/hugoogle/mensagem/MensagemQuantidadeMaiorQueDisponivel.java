@@ -1,11 +1,11 @@
-package mensagem;
+package br.com.hugoogle.mensagem;
 
-import enumerator.ColorEnum;
-import enumerator.QuantidadeEnum;
-import menu.fabrica.Bebida;
-import menu.submenu.SubMenuCompra;
-import menu.submenu.SubMenuReabastecer;
-import model.Produto;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.QuantidadeEnum;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.menu.submenu.SubMenuCompra;
+import br.com.hugoogle.menu.submenu.SubMenuReabastecer;
+import br.com.hugoogle.model.Produto;
 
 import java.util.List;
 import java.util.Map;

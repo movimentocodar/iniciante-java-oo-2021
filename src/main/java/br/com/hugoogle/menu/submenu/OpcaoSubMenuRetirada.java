@@ -1,6 +1,6 @@
-package menu.submenu;
+package br.com.hugoogle.menu.submenu;
 
-import enumerator.ColorEnum;
+import br.com.hugoogle.enumerator.ColorEnum;
 
 public class OpcaoSubMenuRetirada {
 

@@ -1,8 +1,8 @@
-package command;
+package br.com.hugoogle.command;
 
-import controller.VendaController;
-import interfaces.ICommand;
-import menu.fabrica.Bebida;
+import br.com.hugoogle.controller.VendaController;
+import br.com.hugoogle.interfaces.ICommand;
+import br.com.hugoogle.menu.fabrica.Bebida;
 
 public class VendaCommand implements ICommand {
     private final Bebida bebida;

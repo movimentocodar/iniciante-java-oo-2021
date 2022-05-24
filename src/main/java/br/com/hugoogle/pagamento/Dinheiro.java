@@ -1,6 +1,6 @@
-package pagamento;
+package br.com.hugoogle.pagamento;
 
-import interfaces.IPagamento;
+import br.com.hugoogle.interfaces.IPagamento;
 
 public class Dinheiro  implements IPagamento {
 

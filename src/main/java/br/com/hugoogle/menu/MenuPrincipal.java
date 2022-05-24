@@ -1,9 +1,9 @@
-package menu;
+package br.com.hugoogle.menu;
 
-import Validacao.OpcaoPainelValidator;
-import Validacao.ValidarOpcao;
-import menu.fabrica.FabricaMenu;
-import util.InputScanner;
+import br.com.hugoogle.Validacao.OpcaoPainelValidator;
+import br.com.hugoogle.Validacao.ValidarOpcao;
+import br.com.hugoogle.menu.fabrica.FabricaMenu;
+import br.com.hugoogle.util.InputScanner;
 
 public class MenuPrincipal {
 

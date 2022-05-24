@@ -1,7 +1,7 @@
-package service;
+package br.com.hugoogle.service;
 
-import enumerator.QuantidadeEnum;
-import model.Produto;
+import br.com.hugoogle.enumerator.QuantidadeEnum;
+import br.com.hugoogle.model.Produto;
 
 import java.util.List;
 import java.util.Map;

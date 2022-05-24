@@ -1,8 +1,8 @@
-package command;
+package br.com.hugoogle.command;
 
 import br.com.hugoogle.calculadora.CalcularQuantidadeAProduzir;
-import interfaces.ICommand;
-import menu.fabrica.Bebida;
+import br.com.hugoogle.interfaces.ICommand;
+import br.com.hugoogle.menu.fabrica.Bebida;
 
 public class IngredienteCommand implements ICommand {
     private final Bebida bebida;

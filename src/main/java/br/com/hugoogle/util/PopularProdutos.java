@@ -1,6 +1,6 @@
-package util;
+package br.com.hugoogle.util;
 
-import model.Produto;
+import br.com.hugoogle.model.Produto;
 
 import java.util.ArrayList;
 import java.util.Collections;

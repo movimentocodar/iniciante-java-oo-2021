@@ -1,12 +1,12 @@
-package menu.submenu;
+package br.com.hugoogle.menu.submenu;
 
-import Validacao.OpcaoMenuValidator;
+import br.com.hugoogle.Validacao.OpcaoMenuValidator;
 
-import Validacao.ValidarOpcao;
+import br.com.hugoogle.Validacao.ValidarOpcao;
 
-import menu.fabrica.Bebida;
-import menu.fabrica.FabricaMenuPagamento;
-import util.InputScanner;
+import br.com.hugoogle.menu.fabrica.Bebida;
+import br.com.hugoogle.menu.fabrica.FabricaMenuPagamento;
+import br.com.hugoogle.util.InputScanner;
 
 
 public class SubMenuPagamento {

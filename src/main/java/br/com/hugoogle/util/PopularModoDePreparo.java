@@ -1,6 +1,6 @@
-package util;
+package br.com.hugoogle.util;
 
-import model.ModoDePreparo;
+import br.com.hugoogle.model.ModoDePreparo;
 
 import java.util.ArrayList;
 import java.util.List;

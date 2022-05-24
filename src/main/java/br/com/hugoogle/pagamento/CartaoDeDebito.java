@@ -1,9 +1,9 @@
-package pagamento;
+package br.com.hugoogle.pagamento;
 
-import controller.VendaController;
-import enumerator.ColorEnum;
-import interfaces.IPagamento;
-import util.InputScanner;
+import br.com.hugoogle.controller.VendaController;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.interfaces.IPagamento;
+import br.com.hugoogle.util.InputScanner;
 
 public class CartaoDeDebito implements IPagamento {
     private final InputScanner inputScanner = new InputScanner();

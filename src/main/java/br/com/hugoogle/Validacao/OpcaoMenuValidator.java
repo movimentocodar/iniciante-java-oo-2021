@@ -1,11 +1,10 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import interfaces.IMenuValidator;
-import menu.MenuPrincipal;
-import enumerator.ColorEnum;
+import br.com.hugoogle.interfaces.IMenuValidator;
+import br.com.hugoogle.menu.MenuPrincipal;
+import br.com.hugoogle.enumerator.ColorEnum;
 
 public class OpcaoMenuValidator implements IMenuValidator<Integer> {
-   // private MenuPrincipal menuPrincipal = new MenuPrincipal();
 
     @Override
     public void valida(Integer opcao, Integer inicio, Integer fim) throws ValidatorException {

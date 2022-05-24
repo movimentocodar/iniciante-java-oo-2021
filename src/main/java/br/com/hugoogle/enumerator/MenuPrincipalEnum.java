@@ -1,4 +1,4 @@
-package enumerator;
+package br.com.hugoogle.enumerator;
 
 public enum MenuPrincipalEnum {
     COMPRAR(1, "Comprar"),

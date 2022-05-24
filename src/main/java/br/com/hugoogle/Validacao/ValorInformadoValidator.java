@@ -1,6 +1,6 @@
-package Validacao;
+package br.com.hugoogle.Validacao;
 
-import interfaces.IValorInformadoValidator;
+import br.com.hugoogle.interfaces.IValorInformadoValidator;
 
 public class ValorInformadoValidator implements IValorInformadoValidator<Double> {
     @Override

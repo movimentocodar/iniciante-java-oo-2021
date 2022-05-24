@@ -1,9 +1,9 @@
-package pagamento;
+package br.com.hugoogle.pagamento;
 
-import controller.PagamentoController;
-import controller.VendaController;
-import enumerator.ColorEnum;
-import interfaces.IPagamento;
+import br.com.hugoogle.controller.PagamentoController;
+import br.com.hugoogle.controller.VendaController;
+import br.com.hugoogle.enumerator.ColorEnum;
+import br.com.hugoogle.interfaces.IPagamento;
 
 public class Pagamento {
     private final PagamentoController pagamentoController = new PagamentoController();

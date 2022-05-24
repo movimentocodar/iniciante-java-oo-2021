@@ -1,6 +1,6 @@
-package model;
+package br.com.hugoogle.model;
 
-import util.PopularProdutos;
+import br.com.hugoogle.util.PopularProdutos;
 
 import java.util.List;
 
