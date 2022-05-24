@@ -45,19 +45,17 @@ class MensagemMaquinaAbastecidaTest {
 
 
     private void dadoUmaMaquinaAbastecida(){
-        this.mensagemMaquinaAbastecida.maquinaAbastecida(true);
+        this.mensagemMaquinaAbastecida.maquinaAbastecida();
     }
     private void dadoUmaMaquinaDesabastecida(){
-        this.mensagemMaquinaAbastecida.maquinaAbastecida(false);
+        this.mensagemMaquinaAbastecida.maquinaDesabastecida();
     }
     public void verifiqueSeAMaquinaEstaAbastecida() {
-        verify(this.mensagemMaquinaAbastecida, times(1)).maquinaAbastecida(true);
-        verify(this.mensagemMaquinaAbastecida).maquinaAbastecida(abastecidaCaptor.capture());
+        verify(this.mensagemMaquinaAbastecida, times(1)).maquinaAbastecida();
     }
 
     public void verifiqueSeAMaquinaEstaDesabastecida() {
-        verify(this.mensagemMaquinaAbastecida, times(1)).maquinaAbastecida(false);
-        verify(this.mensagemMaquinaAbastecida).maquinaAbastecida(abastecidaCaptor.capture());
+        verify(this.mensagemMaquinaAbastecida, times(1)).maquinaDesabastecida();
     }
 
     private void entaoExibiAMensagemMaquinaSeEncontraAbastecida(){

@@ -20,10 +20,6 @@ class AbastecimentoServiceTest {
     @Mock
     private MensagemMaquinaAbastecida mensagemMaquinaAbastecida;
 
-    @Captor
-    private ArgumentCaptor<Boolean> abastecidaCaptor;
-
-
     private Map<Produto, List<Double>> produtoListMap;
 
     @BeforeEach
@@ -49,17 +45,11 @@ class AbastecimentoServiceTest {
 
 
     public void DeveVerificarSeAMaquinaEstaDesabastecida() {
-        Mockito.verify(mensagemMaquinaAbastecida, Mockito.times(3)).maquinaAbastecida(abastecidaCaptor.capture());
-        Boolean abastecida = abastecidaCaptor.getValue();
-        assertEquals(true, abastecida);
-
+        Mockito.verify(mensagemMaquinaAbastecida, Mockito.times(2)).maquinaDesabastecida();
     }
 
     public void DeveVerificarSeAMaquinaEstaAbastecida() {
-        Mockito.verify(mensagemMaquinaAbastecida).maquinaAbastecida(abastecidaCaptor.capture());
-        Boolean abastecida = abastecidaCaptor.getValue();
-        assertEquals(true, abastecida);
-
+        Mockito.verify(mensagemMaquinaAbastecida).maquinaAbastecida();
     }
 
     private void dadoUmaListaDeProdutoSemQuantidade(){

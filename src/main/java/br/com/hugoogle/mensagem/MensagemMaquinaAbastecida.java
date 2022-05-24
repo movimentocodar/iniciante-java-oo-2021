@@ -12,11 +12,12 @@ public class MensagemMaquinaAbastecida {
         return ColorEnum.GREEN.getColorCode() + "*** Maquina se encontra desabastecida!  *** \n" + ColorEnum.RESET.getColorCode();
     }
 
-    public  void maquinaAbastecida(boolean abastecida) {
-        if (abastecida) {
-            System.out.println(mensagemAbastecida());
-        } else {
-            System.out.println(mensagemDesabastecida());
-        }
+    public void maquinaAbastecida(){
+        System.out.println(mensagemAbastecida());
     }
+
+    public void maquinaDesabastecida(){
+        System.out.println(mensagemDesabastecida());
+    }
+
 }

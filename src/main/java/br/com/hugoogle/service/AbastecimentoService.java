@@ -17,7 +17,7 @@ public class AbastecimentoService {
 
         for (Map.Entry<Produto, List<Double>> produto : produtoEQuantidade.entrySet()) {
             if (produto.getKey().getQuantidade() < 1000) {
-                mensagemMaquinaAbastecida.maquinaAbastecida(false);
+                mensagemMaquinaAbastecida.maquinaDesabastecida();
 
                 double quantidadeAnterior = produto.getKey().getQuantidade();
                 int ESTOQUEPADRAO = 1000;
@@ -28,7 +28,7 @@ public class AbastecimentoService {
             }
 
         }
-        mensagemMaquinaAbastecida.maquinaAbastecida(true);
+        mensagemMaquinaAbastecida.maquinaAbastecida();
 
     }
 }
